@@ -15,6 +15,11 @@
 		D16A7C2323E0AD130059A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C2123E0AD130059A613 /* LaunchScreen.storyboard */; };
 		D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */; };
 		D16A7C3923E0AD140059A613 /* ParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */; };
+		D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CB23E31210005E5CB5 /* Vehicle.swift */; };
+		D19BC7CE23E31302005E5CB5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CD23E31302005E5CB5 /* Car.swift */; };
+		D19BC7D023E313A5005E5CB5 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */; };
+		D19BC7D423E32288005E5CB5 /* ParqueaderoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */; };
+		D1A164F223E3275C008F7D32 /* VehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F123E3275C008F7D32 /* VehicleController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		D16A7C3423E0AD140059A613 /* ParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoUITests.swift; sourceTree = "<group>"; };
 		D16A7C3A23E0AD140059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19BC7CB23E31210005E5CB5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		D19BC7CD23E31302005E5CB5 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
+		D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoController.swift; sourceTree = "<group>"; };
+		D1A164F123E3275C008F7D32 /* VehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		D16A7C1523E0AD120059A613 /* Parqueadero */ = {
 			isa = PBXGroup;
 			children = (
+				D19BC7C923E30AE8005E5CB5 /* Domain */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
 				D16A7C1A23E0AD120059A613 /* ViewController.swift */,
@@ -126,6 +137,50 @@
 				D16A7C3A23E0AD140059A613 /* Info.plist */,
 			);
 			path = ParqueaderoUITests;
+			sourceTree = "<group>";
+		};
+		D19BC7C923E30AE8005E5CB5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D19BC7D223E32278005E5CB5 /* Model */,
+				D19BC7D123E32272005E5CB5 /* Controller */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D19BC7CA23E311E4005E5CB5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
+				D19BC7CD23E31302005E5CB5 /* Car.swift */,
+				D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		D19BC7D123E32272005E5CB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */,
+				D1A164F123E3275C008F7D32 /* VehicleController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D19BC7D223E32278005E5CB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1A164F323E32832008F7D32 /* DAO */,
+				D19BC7CA23E311E4005E5CB5 /* Entities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1A164F323E32832008F7D32 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
+				D19BC7D423E32288005E5CB5 /* ParqueaderoController.swift in Sources */,
 				D16A7C1B23E0AD120059A613 /* ViewController.swift in Sources */,
+				D19BC7CE23E31302005E5CB5 /* Car.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
+				D19BC7D023E313A5005E5CB5 /* Motorcycle.swift in Sources */,
+				D1A164F223E3275C008F7D32 /* VehicleController.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
