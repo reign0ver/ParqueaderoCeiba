@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6179AAC9577F4930530681EB /* Pods_Parqueadero_ParqueaderoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D234A5CFD8C9766DCAD0A96 /* Pods_Parqueadero_ParqueaderoUITests.framework */; };
+		8F2D46D5C12B052BB3F7D80E /* Pods_ParqueaderoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658D7708C7DABD79215BEDA0 /* Pods_ParqueaderoTests.framework */; };
+		A0CD371127725E43250CB8EC /* Pods_Parqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F360D18295FBD8D9EEB557E /* Pods_Parqueadero.framework */; };
 		D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1623E0AD120059A613 /* AppDelegate.swift */; };
 		D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1823E0AD120059A613 /* SceneDelegate.swift */; };
 		D16A7C1B23E0AD120059A613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1A23E0AD120059A613 /* ViewController.swift */; };
@@ -40,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F360D18295FBD8D9EEB557E /* Pods_Parqueadero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parqueadero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		658D7708C7DABD79215BEDA0 /* Pods_ParqueaderoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParqueaderoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D234A5CFD8C9766DCAD0A96 /* Pods_Parqueadero_ParqueaderoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parqueadero_ParqueaderoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		752061822CEFE9E8AADF9086 /* Pods-Parqueadero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.debug.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.debug.xcconfig"; sourceTree = "<group>"; };
+		81788F45DEB16B8DAB8CF7AB /* Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5CF611EAFCA0503DC44E040 /* Pods-Parqueadero-ParqueaderoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero-ParqueaderoUITests.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.release.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.debug.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D16A7C1323E0AD120059A613 /* Parqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C1623E0AD120059A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16A7C1823E0AD120059A613 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 		D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
 		D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoController.swift; sourceTree = "<group>"; };
 		D1A164F123E3275C008F7D32 /* VehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleController.swift; sourceTree = "<group>"; };
+		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CD371127725E43250CB8EC /* Pods_Parqueadero.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F2D46D5C12B052BB3F7D80E /* Pods_ParqueaderoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6179AAC9577F4930530681EB /* Pods_Parqueadero_ParqueaderoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50F0D710AE690D0D2D120081 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F360D18295FBD8D9EEB557E /* Pods_Parqueadero.framework */,
+				6D234A5CFD8C9766DCAD0A96 /* Pods_Parqueadero_ParqueaderoUITests.framework */,
+				658D7708C7DABD79215BEDA0 /* Pods_ParqueaderoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D16A7C0A23E0AD110059A613 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +118,8 @@
 				D16A7C2C23E0AD140059A613 /* ParqueaderoTests */,
 				D16A7C3723E0AD140059A613 /* ParqueaderoUITests */,
 				D16A7C1423E0AD120059A613 /* Products */,
+				E5C22DC98E21FA246A70F0D4 /* Pods */,
+				50F0D710AE690D0D2D120081 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +210,20 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
+		E5C22DC98E21FA246A70F0D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				752061822CEFE9E8AADF9086 /* Pods-Parqueadero.debug.xcconfig */,
+				F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */,
+				81788F45DEB16B8DAB8CF7AB /* Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig */,
+				B5CF611EAFCA0503DC44E040 /* Pods-Parqueadero-ParqueaderoUITests.release.xcconfig */,
+				C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */,
+				B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D16A7C3D23E0AD140059A613 /* Build configuration list for PBXNativeTarget "Parqueadero" */;
 			buildPhases = (
+				7CAF1610F7DE7821D94B4515 /* [CP] Check Pods Manifest.lock */,
 				D16A7C0F23E0AD120059A613 /* Sources */,
 				D16A7C1023E0AD120059A613 /* Frameworks */,
 				D16A7C1123E0AD120059A613 /* Resources */,
+				EE4C4D22C141252D9E0A6BAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D16A7C4023E0AD140059A613 /* Build configuration list for PBXNativeTarget "ParqueaderoTests" */;
 			buildPhases = (
+				4560DFF795F90AEC22AD8D4D /* [CP] Check Pods Manifest.lock */,
 				D16A7C2523E0AD140059A613 /* Sources */,
 				D16A7C2623E0AD140059A613 /* Frameworks */,
 				D16A7C2723E0AD140059A613 /* Resources */,
@@ -225,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D16A7C4323E0AD140059A613 /* Build configuration list for PBXNativeTarget "ParqueaderoUITests" */;
 			buildPhases = (
+				233E1A9791B02D65469D1531 /* [CP] Check Pods Manifest.lock */,
 				D16A7C3023E0AD140059A613 /* Sources */,
 				D16A7C3123E0AD140059A613 /* Frameworks */,
 				D16A7C3223E0AD140059A613 /* Resources */,
+				FD2647294A5722E3DC6CA6D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,6 +354,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		233E1A9791B02D65469D1531 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parqueadero-ParqueaderoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4560DFF795F90AEC22AD8D4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParqueaderoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CAF1610F7DE7821D94B4515 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parqueadero-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE4C4D22C141252D9E0A6BAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parqueadero/Pods-Parqueadero-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parqueadero/Pods-Parqueadero-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Parqueadero/Pods-Parqueadero-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD2647294A5722E3DC6CA6D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D16A7C0F23E0AD120059A613 /* Sources */ = {
@@ -492,6 +641,7 @@
 		};
 		D16A7C3E23E0AD140059A613 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752061822CEFE9E8AADF9086 /* Pods-Parqueadero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -509,6 +659,7 @@
 		};
 		D16A7C3F23E0AD140059A613 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +677,7 @@
 		};
 		D16A7C4123E0AD140059A613 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -547,6 +699,7 @@
 		};
 		D16A7C4223E0AD140059A613 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +721,7 @@
 		};
 		D16A7C4423E0AD140059A613 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81788F45DEB16B8DAB8CF7AB /* Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -587,6 +741,7 @@
 		};
 		D16A7C4523E0AD140059A613 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5CF611EAFCA0503DC44E040 /* Pods-Parqueadero-ParqueaderoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
