@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,9 @@
 		D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */; };
 		D16A7C3923E0AD140059A613 /* ParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */; };
 		D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CB23E31210005E5CB5 /* Vehicle.swift */; };
-		D19BC7CE23E31302005E5CB5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CD23E31302005E5CB5 /* Car.swift */; };
-		D19BC7D023E313A5005E5CB5 /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */; };
-		D19BC7D423E32288005E5CB5 /* ParqueaderoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */; };
-		D1A164F223E3275C008F7D32 /* VehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F123E3275C008F7D32 /* VehicleController.swift */; };
+		D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParkingController.swift */; };
+		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
+		D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +65,9 @@
 		D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoUITests.swift; sourceTree = "<group>"; };
 		D16A7C3A23E0AD140059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19BC7CB23E31210005E5CB5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
-		D19BC7CD23E31302005E5CB5 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
-		D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoController.swift; sourceTree = "<group>"; };
-		D1A164F123E3275C008F7D32 /* VehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleController.swift; sourceTree = "<group>"; };
+		D19BC7D323E32288005E5CB5 /* ParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingController.swift; sourceTree = "<group>"; };
+		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
+		D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAO.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +134,7 @@
 		D16A7C1523E0AD120059A613 /* Parqueadero */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7C923E30AE8005E5CB5 /* Domain */,
+				D19BC7C923E30AE8005E5CB5 /* ModelDomain */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
 				D16A7C1A23E0AD120059A613 /* ViewController.swift */,
@@ -166,21 +164,20 @@
 			path = ParqueaderoUITests;
 			sourceTree = "<group>";
 		};
-		D19BC7C923E30AE8005E5CB5 /* Domain */ = {
+		D19BC7C923E30AE8005E5CB5 /* ModelDomain */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7D223E32278005E5CB5 /* Model */,
 				D19BC7D123E32272005E5CB5 /* Controller */,
+				D19BC7D223E32278005E5CB5 /* Model */,
 			);
-			path = Domain;
+			path = ModelDomain;
 			sourceTree = "<group>";
 		};
 		D19BC7CA23E311E4005E5CB5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
-				D19BC7CD23E31302005E5CB5 /* Car.swift */,
-				D19BC7CF23E313A5005E5CB5 /* Motorcycle.swift */,
+				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -188,8 +185,7 @@
 		D19BC7D123E32272005E5CB5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7D323E32288005E5CB5 /* ParqueaderoController.swift */,
-				D1A164F123E3275C008F7D32 /* VehicleController.swift */,
+				D19BC7D323E32288005E5CB5 /* ParkingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +202,7 @@
 		D1A164F323E32832008F7D32 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 				C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */,
 				B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -463,13 +459,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */,
 				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
-				D19BC7D423E32288005E5CB5 /* ParqueaderoController.swift in Sources */,
+				D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */,
 				D16A7C1B23E0AD120059A613 /* ViewController.swift in Sources */,
-				D19BC7CE23E31302005E5CB5 /* Car.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
-				D19BC7D023E313A5005E5CB5 /* Motorcycle.swift in Sources */,
-				D1A164F223E3275C008F7D32 /* VehicleController.swift in Sources */,
+				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,7 +639,9 @@
 			baseConfigurationReference = 752061822CEFE9E8AADF9086 /* Pods-Parqueadero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parqueadero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -652,6 +649,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.Parqueadero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -662,7 +660,9 @@
 			baseConfigurationReference = F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Parqueadero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,6 +670,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.Parqueadero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
