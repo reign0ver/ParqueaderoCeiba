@@ -10,16 +10,23 @@
 		6179AAC9577F4930530681EB /* Pods_Parqueadero_ParqueaderoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D234A5CFD8C9766DCAD0A96 /* Pods_Parqueadero_ParqueaderoUITests.framework */; };
 		8F2D46D5C12B052BB3F7D80E /* Pods_ParqueaderoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658D7708C7DABD79215BEDA0 /* Pods_ParqueaderoTests.framework */; };
 		A0CD371127725E43250CB8EC /* Pods_Parqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F360D18295FBD8D9EEB557E /* Pods_Parqueadero.framework */; };
+		D11FD49923E8A7C00017883D /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11FD49823E8A7C00017883D /* Vehicles.storyboard */; };
 		D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1623E0AD120059A613 /* AppDelegate.swift */; };
 		D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1823E0AD120059A613 /* SceneDelegate.swift */; };
-		D16A7C1B23E0AD120059A613 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1A23E0AD120059A613 /* ViewController.swift */; };
-		D16A7C1E23E0AD120059A613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C1C23E0AD120059A613 /* Main.storyboard */; };
 		D16A7C2023E0AD130059A613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C1F23E0AD130059A613 /* Assets.xcassets */; };
 		D16A7C2323E0AD130059A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C2123E0AD130059A613 /* LaunchScreen.storyboard */; };
 		D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */; };
 		D16A7C3923E0AD140059A613 /* ParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */; };
 		D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CB23E31210005E5CB5 /* Vehicle.swift */; };
 		D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParkingController.swift */; };
+		D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */; };
+		D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */; };
+		D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAE23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift */; };
+		D19D1AB523E8BD45003FDB0E /* VehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AB323E8BD45003FDB0E /* VehicleCell.swift */; };
+		D19D1AB623E8BD45003FDB0E /* VehicleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19D1AB423E8BD45003FDB0E /* VehicleCell.xib */; };
+		D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */; };
+		D19D1ABD23E8C4A8003FDB0E /* AddVehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */; };
+		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */; };
 /* End PBXBuildFile section */
@@ -50,11 +57,10 @@
 		B5CF611EAFCA0503DC44E040 /* Pods-Parqueadero-ParqueaderoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero-ParqueaderoUITests.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero-ParqueaderoUITests/Pods-Parqueadero-ParqueaderoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.release.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.debug.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D11FD49823E8A7C00017883D /* Vehicles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicles.storyboard; sourceTree = "<group>"; };
 		D16A7C1323E0AD120059A613 /* Parqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C1623E0AD120059A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16A7C1823E0AD120059A613 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D16A7C1A23E0AD120059A613 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D16A7C1D23E0AD120059A613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D16A7C1F23E0AD130059A613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D16A7C2223E0AD130059A613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16A7C2423E0AD130059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +72,14 @@
 		D16A7C3A23E0AD140059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19BC7CB23E31210005E5CB5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		D19BC7D323E32288005E5CB5 /* ParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingController.swift; sourceTree = "<group>"; };
+		D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewController.swift; sourceTree = "<group>"; };
+		D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
+		D19D1AAE23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewControllerHelper.swift; sourceTree = "<group>"; };
+		D19D1AB323E8BD45003FDB0E /* VehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCell.swift; sourceTree = "<group>"; };
+		D19D1AB423E8BD45003FDB0E /* VehicleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleCell.xib; sourceTree = "<group>"; };
+		D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
+		D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddVehicle.storyboard; sourceTree = "<group>"; };
+		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAO.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +126,8 @@
 		D11FD49423E89BF50017883D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D19D1ABB23E8C496003FDB0E /* AddVehicle */,
+				D19D1ABA23E8C47C003FDB0E /* VehicleList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +135,7 @@
 		D11FD49523E89BFB0017883D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,13 +165,12 @@
 		D16A7C1523E0AD120059A613 /* Parqueadero */ = {
 			isa = PBXGroup;
 			children = (
+				D19D1AB723E8C379003FDB0E /* Common */,
 				D11FD49523E89BFB0017883D /* ViewModel */,
 				D11FD49423E89BF50017883D /* View */,
 				D19BC7C923E30AE8005E5CB5 /* ModelDomain */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
-				D16A7C1A23E0AD120059A613 /* ViewController.swift */,
-				D16A7C1C23E0AD120059A613 /* Main.storyboard */,
 				D16A7C1F23E0AD130059A613 /* Assets.xcassets */,
 				D16A7C2123E0AD130059A613 /* LaunchScreen.storyboard */,
 				D16A7C2423E0AD130059A613 /* Info.plist */,
@@ -213,6 +229,43 @@
 				D19BC7CA23E311E4005E5CB5 /* Entities */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D19D1AB023E8BD04003FDB0E /* VehicleCell */ = {
+			isa = PBXGroup;
+			children = (
+				D19D1AB323E8BD45003FDB0E /* VehicleCell.swift */,
+				D19D1AB423E8BD45003FDB0E /* VehicleCell.xib */,
+			);
+			path = VehicleCell;
+			sourceTree = "<group>";
+		};
+		D19D1AB723E8C379003FDB0E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D19D1ABA23E8C47C003FDB0E /* VehicleList */ = {
+			isa = PBXGroup;
+			children = (
+				D19D1AB023E8BD04003FDB0E /* VehicleCell */,
+				D11FD49823E8A7C00017883D /* Vehicles.storyboard */,
+				D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */,
+				D19D1AAE23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift */,
+			);
+			path = VehicleList;
+			sourceTree = "<group>";
+		};
+		D19D1ABB23E8C496003FDB0E /* AddVehicle */ = {
+			isa = PBXGroup;
+			children = (
+				D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */,
+				D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */,
+			);
+			path = AddVehicle;
 			sourceTree = "<group>";
 		};
 		D1A164F323E32832008F7D32 /* DAO */ = {
@@ -345,9 +398,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19D1AB623E8BD45003FDB0E /* VehicleCell.xib in Resources */,
+				D19D1ABD23E8C4A8003FDB0E /* AddVehicle.storyboard in Resources */,
 				D16A7C2323E0AD130059A613 /* LaunchScreen.storyboard in Resources */,
+				D11FD49923E8A7C00017883D /* Vehicles.storyboard in Resources */,
 				D16A7C2023E0AD130059A613 /* Assets.xcassets in Resources */,
-				D16A7C1E23E0AD120059A613 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,11 +530,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19D1AB523E8BD45003FDB0E /* VehicleCell.swift in Sources */,
 				D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */,
+				D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */,
+				D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */,
+				D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */,
 				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
 				D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */,
-				D16A7C1B23E0AD120059A613 /* ViewController.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
+				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,
+				D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */,
 				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
 			);
@@ -517,14 +577,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D16A7C1C23E0AD120059A613 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D16A7C1D23E0AD120059A613 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D16A7C2123E0AD130059A613 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

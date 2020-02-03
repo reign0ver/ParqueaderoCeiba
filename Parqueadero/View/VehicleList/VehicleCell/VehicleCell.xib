@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehicleCell" rowHeight="60" id="KGk-i7-Jjw" customClass="VehicleCell" customModule="Parqueadero" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpL-Me-V3f">
+                        <rect key="frame" x="20" y="15" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="GdT-tu-5Xj"/>
+                            <constraint firstAttribute="height" constant="30" id="t5Z-5N-319"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrance time: 02/02/20 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NF4-Z0-D3J">
+                        <rect key="frame" x="55" y="31" width="249" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Licence Plate: ABC 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgZ-bG-15D">
+                        <rect key="frame" x="55" y="5" width="181" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NF4-Z0-D3J" firstAttribute="top" secondItem="hgZ-bG-15D" secondAttribute="bottom" constant="5" id="5ar-dL-yb3"/>
+                    <constraint firstItem="bpL-Me-V3f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EGS-gi-g80"/>
+                    <constraint firstItem="NF4-Z0-D3J" firstAttribute="leading" secondItem="bpL-Me-V3f" secondAttribute="trailing" constant="5" id="GA2-Wh-Fms"/>
+                    <constraint firstItem="bpL-Me-V3f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="SZY-eU-ugB"/>
+                    <constraint firstItem="hgZ-bG-15D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Xv2-l6-DY7"/>
+                    <constraint firstItem="hgZ-bG-15D" firstAttribute="leading" secondItem="bpL-Me-V3f" secondAttribute="trailing" constant="5" id="eo2-pI-2Pe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="entranceTime" destination="NF4-Z0-D3J" id="3pt-Hx-T1j"/>
+                <outlet property="licenceName" destination="hgZ-bG-15D" id="C0X-Dz-aW1"/>
+            </connections>
+            <point key="canvasLocation" x="167" y="104"/>
+        </tableViewCell>
+    </objects>
+</document>
