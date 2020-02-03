@@ -1,4 +1,4 @@
-node('iOS Node') {
+node('Slave4_Mac') {
 
     stage('Checkout/Build/Test') {
 

@@ -109,6 +109,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D11FD49423E89BF50017883D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D11FD49523E89BFB0017883D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D16A7C0A23E0AD110059A613 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +148,8 @@
 		D16A7C1523E0AD120059A613 /* Parqueadero */ = {
 			isa = PBXGroup;
 			children = (
+				D11FD49523E89BFB0017883D /* ViewModel */,
+				D11FD49423E89BF50017883D /* View */,
 				D19BC7C923E30AE8005E5CB5 /* ModelDomain */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
