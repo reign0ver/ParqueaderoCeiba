@@ -13,6 +13,7 @@ class ParkingController {
     
     var vehicles: [Vehicle] = []
     let parkingDAO: ParkingDAO = ParkingDAO()
+    var vehicleTypes: [VehicleTypec] = []
     
     func addVehicleToTheParking (vehicle: Vehicle) -> String {
         if vehicles.count <= 30 {
@@ -31,11 +32,11 @@ class ParkingController {
         parkingDAO.getAllParkedVehicles()
     }
     
-    private func isGreaterThan500CC (vehicle: Vehicle) -> Bool {
+    func isGreaterThan500CC (vehicle: Vehicle) -> Bool {
         return vehicle.cc > 500
     }
     
-    private func calculateTimeInTheParking (vehicle: Vehicle) -> (Int, Int) {
+    func calculateTimeInTheParking (vehicle: Vehicle) -> (Int, Int) {
         let currentDateComponents = Calendar.current.dateComponents(in: .current, from: Date())
         let vehicleDateComponents = Calendar.current.dateComponents(in: .current, from: vehicle.date)
         
@@ -47,7 +48,7 @@ class ParkingController {
         return (days, hours)
     }
     
-    private func calculatePayMotorcycle (vehicle: Vehicle, totalTime: (Int, Int)) -> Float {
+    func calculatePayMotorcycle (vehicle: Vehicle, totalTime: (Int, Int)) -> Float {
         var totalToPay: Float = 0
         let numberOfDays = Float(totalTime.0)
         let numberOfHours = Float(totalTime.1)
@@ -65,7 +66,7 @@ class ParkingController {
         return totalToPay
     }
     
-    private func calculatePayCar (vehicle: Vehicle, totalTime: (Int, Int)) -> Float {
+    func calculatePayCar (vehicle: Vehicle, totalTime: (Int, Int)) -> Float {
         var totalToPay: Float = 0
         let numberOfDays = Float(totalTime.0)
         let numberOfHours = Float(totalTime.1)
@@ -79,15 +80,15 @@ class ParkingController {
         return totalToPay
     }
     
-    private func findVehicleIntoTheParking (licencePlate: String) -> Vehicle {
-        return Vehicle(id: 0, licencePlate: "", date: Date(), type: .car)
+    func findVehicleIntoTheParking (licencePlate: String) -> Vehicle {
+        return Vehicle()
     }
     
     func calculatePay (vehicle: Vehicle) -> Float {
         var priceToPay: Float = 0
         let timeInTheParking = calculateTimeInTheParking(vehicle: vehicle)
         
-        if vehicle.type == .motorcycle {
+        if vehicle.type.typeName == "Motorcycle" {
             priceToPay = calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
         } else {
             priceToPay = calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)

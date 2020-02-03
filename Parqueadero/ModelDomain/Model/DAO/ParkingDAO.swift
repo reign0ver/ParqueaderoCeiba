@@ -13,6 +13,7 @@ class ParkingDAO {
     
     let realm = try! Realm()
     lazy var vehicles: Results<Vehicle> = {self.realm.objects(Vehicle.self)}()
+    lazy var vehicleTypes: Results<VehicleTypec> = {self.realm.objects(VehicleTypec.self)}()
     
     func insert (_ vehicle : Vehicle) {
         try! realm.write {
@@ -26,5 +27,20 @@ class ParkingDAO {
     
     func removeFromParking (_ vehicle: Vehicle) {
         realm.delete(vehicle)
+    }
+    
+    func populateVehicleTypes () {
+        if vehicleTypes.count == 0 {
+            try! realm.write() {
+                let defaultTypes = ["Car", "Motorcycle"]
+                
+                for type in defaultTypes {
+                    let newType = VehicleTypec()
+                    newType.typeName = type
+                    realm.add(newType)
+                }
+            }
+            vehicleTypes = realm.objects(VehicleTypec.self)
+        }
     }
 }
