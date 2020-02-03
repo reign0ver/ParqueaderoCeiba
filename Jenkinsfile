@@ -1,4 +1,4 @@
-node('iOS Node') {
+node('Slave4_Mac') {
 
     stage('Checkout/Build/Test') {
 
@@ -15,7 +15,7 @@ node('iOS Node') {
         ])
 
         // Build and Test
-        sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
+        sh 'xcodebuild -scheme "Parqueadero" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.2" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
 
         // Publish test restults.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
@@ -25,7 +25,7 @@ node('iOS Node') {
         
         parallel Coverage: {
             // Generate Code Coverage report
-            sh '/usr/local/bin/slather coverage --jenkins --html --scheme TimeTable TimeTable.xcodeproj/'
+            sh '/usr/local/bin/slather coverage --jenkins --html --scheme Parqueadero Parqueadero.xcodeproj/'
     
             // Publish coverage results
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
