@@ -12,6 +12,7 @@ class VehicleCell: UITableViewCell {
 
     @IBOutlet weak var licenceName: UILabel!
     @IBOutlet weak var entranceTime: UILabel!
+    @IBOutlet weak var imageType: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,8 @@ class VehicleCell: UITableViewCell {
     
     func configureCell (_ vehicle: Vehicle) {
         licenceName.text = "Licence Plate: \(vehicle.licencePlate)"
-//        entranceTime.text = "Licence Plate: \(vehicle.date)"
+//        entranceTime.text = "Entrance Time: \(vehicle.date)"
+        imageType.image = vehicle.type.typeName == "Car" ? UIImage(named: "carro") : UIImage(named: "moto")
     }
     
 }

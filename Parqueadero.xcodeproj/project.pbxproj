@@ -30,6 +30,7 @@
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */; };
 		D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8623E9C68C00574A35 /* VehicleType.swift */; };
+		D1D98B8923EA257300574A35 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8823EA257300574A35 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAO.swift; sourceTree = "<group>"; };
 		D1D98B8623E9C68C00574A35 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
+		D1D98B8823EA257300574A35 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,6 +215,7 @@
 				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
 				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
 				D1D98B8623E9C68C00574A35 /* VehicleType.swift */,
+				D1D98B8823EA257300574A35 /* Message.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */,
 				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
+				D1D98B8923EA257300574A35 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

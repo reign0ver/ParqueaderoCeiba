@@ -36,7 +36,7 @@ class AddVehicleViewController: UIViewController {
         
         viewModel.addVehicle(newVehicle)
         
-        let alerta = UIAlertController(title: "Alert!", message: "Vehicle added succesfully!", preferredStyle: .alert)
+        let alerta = UIAlertController(title: "Alert!", message: viewModel.message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alerta.addAction(ok)
         self.present(alerta, animated: true, completion: nil)

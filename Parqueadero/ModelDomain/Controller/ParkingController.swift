@@ -11,17 +11,48 @@ import RealmSwift
 
 class ParkingController {
     
-    var vehicles: [Vehicle] = []
     let parkingDAO: ParkingDAO = ParkingDAO()
-    var vehicleTypes: [VehicleType] = []
     
     func addVehicleToTheParking (vehicle: Vehicle) -> String {
-        if vehicles.count <= 30 {
+        if isParkingFull().status {
             parkingDAO.insert(vehicle)
             return "Vehicle added successfully!"
         } else {
             return "Parking is full :("
         }
+    }
+    
+    func isParkingCarFull (vehicles: Results<Vehicle>) -> Int8 {
+        var carCant: Int8 = 0
+        for v in vehicles {
+            if v.type!.typeName == "Car" {
+                carCant += 1
+            }
+        }
+        return carCant
+    }
+    
+    func isParkingMotoFull (vehicles: Results<Vehicle>) -> Int8 {
+        var motoCant: Int8 = 0
+        for v in vehicles {
+            if v.type!.typeName == "Motorcycle" {
+                motoCant += 1
+            }
+        }
+        return motoCant
+    }
+    
+    func isParkingFull () -> Message {
+        let vehicles = parkingDAO.getAllParkedVehicles()
+        let carCant = isParkingCarFull(vehicles: vehicles)
+        let motoCant = isParkingMotoFull(vehicles: vehicles)
+        
+        if carCant > 20 {
+            return Message(status: false, message: "Full of cars :(")
+        } else if motoCant > 10 {
+            return Message(status: false, message: "Full of motos :(")
+        }
+        return Message(status: true, message: "")
     }
     
     func removeVehicleInTheParking (_ vehicle: Vehicle) {

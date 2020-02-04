@@ -9,10 +9,6 @@
 import Foundation
 import RealmSwift
 
-protocol ParkingViewModelDelegate: class {
-    func reloadTable()
-}
-
 class ParkingViewModel {
     
     // MARK: View Messages
@@ -22,7 +18,6 @@ class ParkingViewModel {
     let emptyListMessage = "Parking is empty"
     
     let model = ParkingController()
-    weak var delegate: ParkingViewModelDelegate?
     
     var parkedVehicles: Results<Vehicle>?
     var parkedVehiclesFiltered: Results<Vehicle>?
@@ -31,7 +26,6 @@ class ParkingViewModel {
     
     func addVehicle (_ vehicle: Vehicle) {
         message = model.addVehicleToTheParking(vehicle: vehicle)
-        delegate?.reloadTable()
     }
     
     func removeVehicleFromTheParking (_ vehicle: Vehicle) {
@@ -43,4 +37,6 @@ class ParkingViewModel {
     func getAllVehicles () {
         parkedVehicles = model.getAllParkedVehicles()
     }
+    
+    
 }

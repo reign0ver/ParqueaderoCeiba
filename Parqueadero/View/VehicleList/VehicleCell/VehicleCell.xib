@@ -48,6 +48,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="entranceTime" destination="NF4-Z0-D3J" id="3pt-Hx-T1j"/>
+                <outlet property="imageType" destination="bpL-Me-V3f" id="yh3-1O-eSt"/>
                 <outlet property="licenceName" destination="hgZ-bG-15D" id="C0X-Dz-aW1"/>
             </connections>
             <point key="canvasLocation" x="167" y="104"/>
