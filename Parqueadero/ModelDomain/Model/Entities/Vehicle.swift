@@ -9,14 +9,13 @@
 import Foundation
 import RealmSwift
 
-class VehicleTypec: Object {
+class VehicleType: Object {
     @objc dynamic var typeName = ""
 }
 
 class Vehicle: Object {
-    @objc dynamic var id: Int = 0
     @objc dynamic var licencePlate: String = ""
-    @objc dynamic var type: VehicleTypec!
+    @objc dynamic var type: VehicleType!
     @objc dynamic var cc: Int16 = 0
     @objc dynamic var date: Date = Date()
 }

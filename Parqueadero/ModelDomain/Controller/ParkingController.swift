@@ -13,7 +13,7 @@ class ParkingController {
     
     var vehicles: [Vehicle] = []
     let parkingDAO: ParkingDAO = ParkingDAO()
-    var vehicleTypes: [VehicleTypec] = []
+    var vehicleTypes: [VehicleType] = []
     
     func addVehicleToTheParking (vehicle: Vehicle) -> String {
         if vehicles.count <= 30 {
@@ -24,12 +24,12 @@ class ParkingController {
         }
     }
     
-    private func removeVehicleInTheParking (vehicle: Vehicle) {
+    func removeVehicleInTheParking (_ vehicle: Vehicle) {
         parkingDAO.removeFromParking(vehicle)
     }
     
-    private func getAllParkedVehicles () {
-        parkingDAO.getAllParkedVehicles()
+    func getAllParkedVehicles () -> Results<Vehicle> {
+        return parkingDAO.getAllParkedVehicles()
     }
     
     func isGreaterThan500CC (vehicle: Vehicle) -> Bool {
@@ -90,10 +90,10 @@ class ParkingController {
         
         if vehicle.type.typeName == "Motorcycle" {
             priceToPay = calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
-        } else {
+        } else if vehicle.type.typeName == "Car" {
             priceToPay = calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
         }
-        removeVehicleInTheParking(vehicle: vehicle)
+        removeVehicleInTheParking(vehicle)
         return priceToPay
     }
 }

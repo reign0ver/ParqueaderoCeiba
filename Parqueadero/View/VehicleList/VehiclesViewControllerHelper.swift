@@ -7,19 +7,24 @@
 //
 
 import Foundation
+import RealmSwift
 
 extension VehiclesViewController {
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
+    
     var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty
     }
     
-    func filterContentForSearchText(_ searchText: String) {
-        viewModel.parkedVehiclesFiltered = viewModel.parkedVehicles.filter {
-            return $0.licencePlate.lowercased().contains(searchText.lowercased())
-        }
+    func filterResultsWithSearchString(_ searchText: String) {
+        let predicate = NSPredicate(format: "licencePlate BEGINSWITH [c]%@", searchText)
+        let realm = try! Realm()
+        viewModel.parkedVehiclesFiltered = realm.objects(Vehicle.self)
+            .filter(predicate)
+//            .sorted(byKeyPath: "licencePlate", ascending: true)
+        
         tableView.reloadData()
     }
 }

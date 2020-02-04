@@ -10,8 +10,11 @@ import UIKit
 
 class AddVehicleViewController: UIViewController {
     
+    @IBOutlet weak var licenceName: UITextField!
+    @IBOutlet weak var cc: UITextField!
+    @IBOutlet weak var type: UITextField!
     
-    var viewModel: ParkingViewModel?
+    let viewModel = ParkingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +22,24 @@ class AddVehicleViewController: UIViewController {
     }
     
     private func setupNavbar () {
-//        navigationItem.title = viewModel.userView?.name
-        navigationItem.title = "New Vehicle"
+        navigationItem.title = viewModel.newVehicleNavTitle
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(save))
     }
-
+    
+    @objc private func save () {
+        let vehicleType = VehicleType()
+        vehicleType.typeName = type.text!
+        let newVehicle = Vehicle()
+        newVehicle.licencePlate = licenceName.text!
+        newVehicle.cc = Int16(cc.text!) ?? 0
+        newVehicle.type = vehicleType
+        
+        viewModel.addVehicle(newVehicle)
+        
+        let alerta = UIAlertController(title: "Alert!", message: "Vehicle added succesfully!", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alerta.addAction(ok)
+        self.present(alerta, animated: true, completion: nil)
+    }
+    
 }

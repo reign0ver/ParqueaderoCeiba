@@ -22,6 +22,12 @@ class VehiclesViewController: UIViewController {
         setupSearchController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        viewModel.getAllVehicles()
+        tableView.reloadData()
+    }
+    
     private func setupNavbar () {
         self.navigationItem.title = viewModel.navigationTitle
         self.navigationController?.navigationBar.prefersLargeTitles = false
@@ -45,20 +51,18 @@ class VehiclesViewController: UIViewController {
     @objc private func goToAddVehicle () {
         let story = UIStoryboard(name: "AddVehicle", bundle: nil)
         let viewController = story.instantiateViewController(withIdentifier: "AddVehicleViewController") as! AddVehicleViewController
-        viewController.viewModel = viewModel
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-
 }
 
 extension VehiclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.parkedVehicles.count
+        return viewModel.parkedVehicles!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellId) as! VehicleCell
-        let vehicle = !isFiltering ? viewModel.parkedVehicles[indexPath.row] : viewModel.parkedVehiclesFiltered[indexPath.row]
+        let vehicle = !isFiltering ? viewModel.parkedVehicles![indexPath.row] : viewModel.parkedVehiclesFiltered![indexPath.row]
         cell.configureCell(vehicle)
         return cell
     }
@@ -70,8 +74,21 @@ extension VehiclesViewController: UITableViewDataSource {
 
 extension VehiclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let selectedVehicle = viewModel.parkedVehicles![indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
-            //
+            let alert = UIAlertController(title: "You're going to delete a vehicle", message: "Are you sure you want to remove the vehicle from the parking?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                self.viewModel.removeVehicleFromTheParking(selectedVehicle)
+                let alert = UIAlertController(title: "Total to pay!", message: "Your debt is \(self.viewModel.message)", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
+                self.present(alert, animated: true, completion: nil)
+                alert.addAction(ok)
+                tableView.reloadData()
+            })
+            let cancel = UIAlertAction(title: "CANCEL", style: .destructive, handler: nil)
+            alert.addAction(ok)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
         }
         deleteAction.backgroundColor = .red
         tableView.deselectRow(at: indexPath, animated: false)
@@ -83,7 +100,7 @@ extension VehiclesViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         if let searchText = searchBar.text {
-            filterContentForSearchText(searchText)
+            filterResultsWithSearchString(searchText)
         }
     }
 }

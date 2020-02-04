@@ -11,9 +11,13 @@ import RealmSwift
 
 class ParkingDAO {
     
-    let realm = try! Realm()
-    lazy var vehicles: Results<Vehicle> = {self.realm.objects(Vehicle.self)}()
-    lazy var vehicleTypes: Results<VehicleTypec> = {self.realm.objects(VehicleTypec.self)}()
+    var realm = try! Realm()
+//    lazy var vehicles: Results<Vehicle> = {self.realm.objects(Vehicle.self)}()
+    lazy var vehicleTypes: Results<VehicleType> = {self.realm.objects(VehicleType.self)}()
+    
+//    init() {
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//    }
     
     func insert (_ vehicle : Vehicle) {
         try! realm.write {
@@ -21,12 +25,14 @@ class ParkingDAO {
         }
     }
     
-    func getAllParkedVehicles () {
-        vehicles = realm.objects(Vehicle.self)
+    func getAllParkedVehicles () -> Results<Vehicle> {
+        return realm.objects(Vehicle.self)
     }
     
     func removeFromParking (_ vehicle: Vehicle) {
-        realm.delete(vehicle)
+        try! realm.write {
+            realm.delete(vehicle)
+        }
     }
     
     func populateVehicleTypes () {
@@ -35,12 +41,12 @@ class ParkingDAO {
                 let defaultTypes = ["Car", "Motorcycle"]
                 
                 for type in defaultTypes {
-                    let newType = VehicleTypec()
+                    let newType = VehicleType()
                     newType.typeName = type
                     realm.add(newType)
                 }
             }
-            vehicleTypes = realm.objects(VehicleTypec.self)
+            vehicleTypes = realm.objects(VehicleType.self)
         }
     }
 }

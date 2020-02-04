@@ -15,34 +15,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Licence Plate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-ld-J7m">
-                                <rect key="frame" x="20" y="126" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Licence Plate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-ld-J7m">
+                                <rect key="frame" x="132" y="69" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="WOU-Q3-mXw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-tC-Was">
-                                <rect key="frame" x="20" y="181" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-tC-Was">
+                                <rect key="frame" x="132" y="113" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="6d6-bK-Frb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fvg-9E-CDC">
-                                <rect key="frame" x="20" y="243" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date and Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rc-bc-D0V">
-                                <rect key="frame" x="20" y="295" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fvg-9E-CDC">
+                                <rect key="frame" x="132" y="157" width="150" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iNO-ca-5zU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zbx-ra-tsS" firstAttribute="trailing" secondItem="0GV-tC-Was" secondAttribute="trailing" constant="132" id="3FN-UJ-6Bn"/>
+                            <constraint firstItem="0GV-tC-Was" firstAttribute="leading" secondItem="Zbx-ra-tsS" secondAttribute="leading" constant="132" id="IJf-HX-pZc"/>
+                            <constraint firstItem="dg5-ld-J7m" firstAttribute="top" secondItem="Zbx-ra-tsS" secondAttribute="top" constant="25" id="SrH-ZG-Dl3"/>
+                            <constraint firstItem="0GV-tC-Was" firstAttribute="top" secondItem="dg5-ld-J7m" secondAttribute="bottom" constant="10" id="Wps-BZ-7En"/>
+                            <constraint firstItem="Fvg-9E-CDC" firstAttribute="leading" secondItem="Zbx-ra-tsS" secondAttribute="leading" constant="132" id="XrV-6b-n4c"/>
+                            <constraint firstItem="dg5-ld-J7m" firstAttribute="centerX" secondItem="1bi-QG-dlQ" secondAttribute="centerX" id="YtH-Cw-Vjr"/>
+                            <constraint firstItem="dg5-ld-J7m" firstAttribute="leading" secondItem="Zbx-ra-tsS" secondAttribute="leading" constant="132" id="aYE-b9-PuR"/>
+                            <constraint firstItem="Zbx-ra-tsS" firstAttribute="trailing" secondItem="Fvg-9E-CDC" secondAttribute="trailing" constant="132" id="dK5-uN-Qml"/>
+                            <constraint firstItem="Fvg-9E-CDC" firstAttribute="top" secondItem="0GV-tC-Was" secondAttribute="bottom" constant="10" id="mzx-Cf-mAX"/>
+                            <constraint firstItem="Fvg-9E-CDC" firstAttribute="centerX" secondItem="1bi-QG-dlQ" secondAttribute="centerX" id="qSm-Wv-8me"/>
+                            <constraint firstItem="0GV-tC-Was" firstAttribute="centerX" secondItem="1bi-QG-dlQ" secondAttribute="centerX" id="qpg-Nc-s2L"/>
+                            <constraint firstItem="Zbx-ra-tsS" firstAttribute="trailing" secondItem="dg5-ld-J7m" secondAttribute="trailing" constant="132" id="yMF-WH-qc6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Zbx-ra-tsS"/>
                     </view>
+                    <connections>
+                        <outlet property="cc" destination="0GV-tC-Was" id="rMQ-UQ-886"/>
+                        <outlet property="licenceName" destination="dg5-ld-J7m" id="w1V-PK-LXP"/>
+                        <outlet property="type" destination="Fvg-9E-CDC" id="nyv-eU-AAn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skr-hl-8vW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

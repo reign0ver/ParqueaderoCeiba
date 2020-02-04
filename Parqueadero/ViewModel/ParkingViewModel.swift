@@ -7,26 +7,40 @@
 //
 
 import Foundation
+import RealmSwift
+
+protocol ParkingViewModelDelegate: class {
+    func reloadTable()
+}
 
 class ParkingViewModel {
     
     // MARK: View Messages
     let cellId = "vehicleCell"
     let navigationTitle = "Vehicles"
+    let newVehicleNavTitle = "New Vehicle"
     let emptyListMessage = "Parking is empty"
     
     let model = ParkingController()
+    weak var delegate: ParkingViewModelDelegate?
     
+    var parkedVehicles: Results<Vehicle>?
+    var parkedVehiclesFiltered: Results<Vehicle>?
     
-    let v1 = Vehicle()
-    let v2 = Vehicle()
+    var message = ""
     
-    var parkedVehicles: [Vehicle] = []
-    var parkedVehiclesFiltered: [Vehicle] = []
+    func addVehicle (_ vehicle: Vehicle) {
+        message = model.addVehicleToTheParking(vehicle: vehicle)
+        delegate?.reloadTable()
+    }
     
-    init() {
-        v1.licencePlate = "ABC 000"
-        v2.licencePlate = "DEF 111"
-        parkedVehicles = [v1, v2]
+    func removeVehicleFromTheParking (_ vehicle: Vehicle) {
+//        model.removeVehicleInTheParking(vehicle)
+        let totalToPay = model.calculatePay(vehicle: vehicle)
+        message = "Total to pay: \(totalToPay)"
+    }
+    
+    func getAllVehicles () {
+        parkedVehicles = model.getAllParkedVehicles()
     }
 }
