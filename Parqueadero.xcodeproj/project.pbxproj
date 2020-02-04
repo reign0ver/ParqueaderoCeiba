@@ -29,6 +29,7 @@
 		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */; };
+		D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8623E9C68C00574A35 /* VehicleType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAO.swift; sourceTree = "<group>"; };
+		D1D98B8623E9C68C00574A35 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +212,7 @@
 			children = (
 				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
 				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
+				D1D98B8623E9C68C00574A35 /* VehicleType.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */,
 				D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */,
 				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
+				D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */,
 				D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
 				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,

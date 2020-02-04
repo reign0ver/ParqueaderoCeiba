@@ -12,33 +12,35 @@ import XCTest
 class ParqueaderoTests: XCTestCase {
     
     var parkingController: ParkingController!
-    var dateComponents: DateComponents!
+    var dateComponentsEntrance: DateComponents!
     var someDate: Date!
-    var currentDateComponents: DateComponents!
+    var dateComponentsOut: DateComponents!
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         parkingController = ParkingController()
-        dateComponents = DateComponents()
-        setupRandomDateIntoDateComponents()
-        currentDateIntoDateComponents()
+        dateComponentsEntrance = DateComponents()
+        dateComponentsOut = DateComponents()
+        setupDateComponentsOut()
+        setupDateComponentsIn()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func currentDateIntoDateComponents () {
-        currentDateComponents = Calendar.current.dateComponents([.day, .hour], from: Date())
+    func setupDateComponentsOut () {
+        dateComponentsOut = Calendar.current.dateComponents([.day, .hour, .month], from: Date())
     }
     
-    func setupRandomDateIntoDateComponents () {
-        dateComponents.year = 2020
-        dateComponents.month = 2
-        dateComponents.day = 3
-        dateComponents.hour = 7
-        dateComponents.minute = 30
-        dateComponents.timeZone = .current
+    func setupDateComponentsIn () {
+        
+        dateComponentsEntrance = Calendar.current.dateComponents([.day, .hour, .month], from: Date())
+        
+        dateComponentsEntrance.day = dateComponentsOut.day! - 1
+        dateComponentsEntrance.hour = dateComponentsOut.hour! - 5
+        dateComponentsEntrance.minute = 30
+        dateComponentsEntrance.timeZone = .current
     }
     
     func testMotorcycleIsGreaterThan500CC () {
@@ -51,27 +53,79 @@ class ParqueaderoTests: XCTestCase {
     func testCalculateTimeInTheParking () {
         let vehicle = Vehicle()
         let userCalendar = Calendar.current
-        let someDate = userCalendar.date(from: dateComponents)
+        let someDate = userCalendar.date(from: dateComponentsEntrance)
         
         vehicle.date = someDate!
         
         let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
-        XCTAssertEqual(timeInTheParking.0, currentDateComponents.day! - dateComponents.day!)
-        XCTAssertEqual(timeInTheParking.1, currentDateComponents.hour! - dateComponents.hour!)
+        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+        
+        XCTAssertEqual(timeInTheParking.0, days)
+        XCTAssertEqual(timeInTheParking.1, hours)
         
     }
     
     func testCalculatePayCar () {
         let vehicle = Vehicle()
         let userCalendar = Calendar.current
-        let someDate = userCalendar.date(from: dateComponents)
+        let someDate = userCalendar.date(from: dateComponentsEntrance)
         
         vehicle.date = someDate!
-        let numberOfHours = currentDateComponents.hour! - dateComponents.hour!
+        
+        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
         
         let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
         let totalToPay = parkingController.calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
-        XCTAssertEqual(totalToPay, CarPrices.hour.rawValue * Float(numberOfHours))
+        XCTAssertEqual(totalToPay, (CarPrices.day.rawValue * Float(days)) + (CarPrices.hour.rawValue * Float(hours)))
+        
+    }
+    
+    func testCalculatePayMotorcycleIfNot500CC () {
+        let vehicle = Vehicle()
+        let userCalendar = Calendar.current
+        let someDate = userCalendar.date(from: dateComponentsEntrance)
+        
+        vehicle.date = someDate!
+        vehicle.cc = 200
+        
+        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+        
+        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
+        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)))
+    }
+    
+    func testCalculatePayMotorcycleIf500CC () {
+        let vehicle = Vehicle()
+        let userCalendar = Calendar.current
+        let someDate = userCalendar.date(from: dateComponentsEntrance)
+        
+        vehicle.date = someDate!
+        vehicle.cc = 650
+        
+        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+        
+        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
+        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)) + MotorcyclePrices.extraCC.rawValue)
+    }
+    
+    func testIfParkingIsNotFull () {
+        let vehicle = Vehicle()
+        let str = parkingController.addVehicleToTheParking(vehicle: vehicle)
+        XCTAssertEqual(str, "Vehicle added successfully!")
     }
 
 }

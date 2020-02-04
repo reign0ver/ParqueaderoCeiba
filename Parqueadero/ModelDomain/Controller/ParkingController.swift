@@ -40,10 +40,10 @@ class ParkingController {
         let currentDateComponents = Calendar.current.dateComponents(in: .current, from: Date())
         let vehicleDateComponents = Calendar.current.dateComponents(in: .current, from: vehicle.date)
         
-        let days = currentDateComponents.day! - vehicleDateComponents.day!
-        let hours = days == 0
-            ? currentDateComponents.hour! - vehicleDateComponents.hour!
-            : 24 - (vehicleDateComponents.hour! - currentDateComponents.hour!)
+        let days = currentDateComponents.day! - vehicleDateComponents.day! //cambiar por las 9 hrs
+        let hours = vehicleDateComponents.hour! > currentDateComponents.hour!
+            ? 24 - (vehicleDateComponents.hour! - currentDateComponents.hour!)
+            : currentDateComponents.hour! - vehicleDateComponents.hour!
         
         return (days, hours)
     }
@@ -56,8 +56,8 @@ class ParkingController {
         
         if numberOfDays > 0 {
             totalToPay = greaterThan500CC
-                ? (MotorcyclePrices.day.rawValue * numberOfDays) + (MotorcyclePrices.day.rawValue * numberOfHours) + MotorcyclePrices.extraCC.rawValue
-                : (MotorcyclePrices.day.rawValue * numberOfDays) + (MotorcyclePrices.day.rawValue * numberOfHours)
+                ? (MotorcyclePrices.day.rawValue * numberOfDays) + (MotorcyclePrices.hour.rawValue * numberOfHours) + MotorcyclePrices.extraCC.rawValue
+                : (MotorcyclePrices.day.rawValue * numberOfDays) + (MotorcyclePrices.hour.rawValue * numberOfHours)
         } else {
             totalToPay = !greaterThan500CC
                 ? (MotorcyclePrices.hour.rawValue * numberOfHours) + MotorcyclePrices.extraCC.rawValue
@@ -72,7 +72,7 @@ class ParkingController {
         let numberOfHours = Float(totalTime.1)
         
         if numberOfDays > 0 {
-            totalToPay = (CarPrices.day.rawValue * numberOfDays) + (CarPrices.day.rawValue * numberOfHours)
+            totalToPay = (CarPrices.day.rawValue * numberOfDays) + (CarPrices.hour.rawValue * numberOfHours)
         } else {
             totalToPay = CarPrices.hour.rawValue * numberOfHours
         }

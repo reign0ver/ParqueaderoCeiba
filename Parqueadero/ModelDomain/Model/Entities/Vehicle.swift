@@ -9,10 +9,6 @@
 import Foundation
 import RealmSwift
 
-class VehicleType: Object {
-    @objc dynamic var typeName = ""
-}
-
 class Vehicle: Object {
     @objc dynamic var licencePlate: String = ""
     @objc dynamic var type: VehicleType!
