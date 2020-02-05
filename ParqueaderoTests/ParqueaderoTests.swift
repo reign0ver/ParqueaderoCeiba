@@ -135,11 +135,12 @@ class ParqueaderoTests: XCTestCase {
         XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)) + MotorcyclePrices.extraCC.rawValue)
     }
     
-    func testIfParkingIsNotFull () {
+    func testIfParkingIsNotFull () { //cambiar por un array quemado
         //Arrange
         let vehicle = Vehicle()
         //Act
-        let str = parkingController.addVehicleToTheParking(vehicle: vehicle)
+        let added = parkingController.addVehicleToTheParking(vehicle: vehicle)
+        let str = added.data as! String
         //Assert
         XCTAssertEqual(str, "Vehicle added successfully!")
     }

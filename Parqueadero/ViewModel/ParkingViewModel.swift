@@ -17,7 +17,7 @@ class ParkingViewModel {
     let newVehicleNavTitle = "New Vehicle"
     let emptyListMessage = "Parking is empty"
     
-    let model = ParkingController()
+    let model = ParkingModel()
     
     var parkedVehicles: Results<Vehicle>?
     var parkedVehiclesFiltered: Results<Vehicle>?
@@ -25,17 +25,29 @@ class ParkingViewModel {
     var message = ""
     
     func addVehicle (_ vehicle: Vehicle) {
-        message = model.addVehicleToTheParking(vehicle: vehicle)
+        model.addVehicle(vehicle) { (response) in
+            switch response {
+            case .success(let data):
+                self.message = data as! String
+            case .failure(let error):
+                self.message = error
+            }
+        }
     }
     
     func removeVehicleFromTheParking (_ vehicle: Vehicle) {
-//        model.removeVehicleInTheParking(vehicle)
-        let totalToPay = model.calculatePay(vehicle: vehicle)
-        message = "Total to pay: \(totalToPay)"
+        model.removeVehicleFromTheParking(vehicle) { (response) in
+            switch response {
+            case .success(let data):
+                self.message = data as! String
+            case .failure(let error):
+                self.message = error
+            }
+        }
     }
     
     func getAllVehicles () {
-        parkedVehicles = model.getAllParkedVehicles()
+        parkedVehicles = model.getAllVehicles()
     }
     
     

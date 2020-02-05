@@ -18,7 +18,7 @@
 		D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */; };
 		D16A7C3923E0AD140059A613 /* ParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */; };
 		D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CB23E31210005E5CB5 /* Vehicle.swift */; };
-		D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParkingController.swift */; };
+		D19BC7D423E32288005E5CB5 /* ParkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParkingService.swift */; };
 		D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */; };
 		D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */; };
 		D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAE23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift */; };
@@ -28,9 +28,17 @@
 		D19D1ABD23E8C4A8003FDB0E /* AddVehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */; };
 		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
-		D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */; };
+		D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */; };
 		D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8623E9C68C00574A35 /* VehicleType.swift */; };
-		D1D98B8923EA257300574A35 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8823EA257300574A35 /* Message.swift */; };
+		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
+		D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */; };
+		D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */; };
+		D1D98B9223EB7D1200574A35 /* GetInVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9123EB7D1200574A35 /* GetInVehicleService.swift */; };
+		D1D98B9423EB7D6C00574A35 /* GetOutVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9323EB7D6C00574A35 /* GetOutVehicleService.swift */; };
+		D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9623EB7E3E00574A35 /* CalculatePaymentProtocol.swift */; };
+		D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9823EB7EE000574A35 /* CalculatePaymentCar.swift */; };
+		D1D98B9B23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9A23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift */; };
+		D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +81,7 @@
 		D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoUITests.swift; sourceTree = "<group>"; };
 		D16A7C3A23E0AD140059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19BC7CB23E31210005E5CB5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
-		D19BC7D323E32288005E5CB5 /* ParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingController.swift; sourceTree = "<group>"; };
+		D19BC7D323E32288005E5CB5 /* ParkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingService.swift; sourceTree = "<group>"; };
 		D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewController.swift; sourceTree = "<group>"; };
 		D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
 		D19D1AAE23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewControllerHelper.swift; sourceTree = "<group>"; };
@@ -83,9 +91,17 @@
 		D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddVehicle.storyboard; sourceTree = "<group>"; };
 		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
-		D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAO.swift; sourceTree = "<group>"; };
+		D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImpl.swift; sourceTree = "<group>"; };
 		D1D98B8623E9C68C00574A35 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
-		D1D98B8823EA257300574A35 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D1D98B8A23EAFF8800574A35 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOProtocol.swift; sourceTree = "<group>"; };
+		D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingModel.swift; sourceTree = "<group>"; };
+		D1D98B9123EB7D1200574A35 /* GetInVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInVehicleService.swift; sourceTree = "<group>"; };
+		D1D98B9323EB7D6C00574A35 /* GetOutVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOutVehicleService.swift; sourceTree = "<group>"; };
+		D1D98B9623EB7E3E00574A35 /* CalculatePaymentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentProtocol.swift; sourceTree = "<group>"; };
+		D1D98B9823EB7EE000574A35 /* CalculatePaymentCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentCar.swift; sourceTree = "<group>"; };
+		D1D98B9A23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentMotorcycle.swift; sourceTree = "<group>"; };
+		D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentContext.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,10 +185,11 @@
 		D16A7C1523E0AD120059A613 /* Parqueadero */ = {
 			isa = PBXGroup;
 			children = (
+				D1D98B8E23EB19F900574A35 /* Model */,
 				D19D1AB723E8C379003FDB0E /* Common */,
 				D11FD49523E89BFB0017883D /* ViewModel */,
 				D11FD49423E89BF50017883D /* View */,
-				D19BC7C923E30AE8005E5CB5 /* ModelDomain */,
+				D19BC7C923E30AE8005E5CB5 /* Domain */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
 				D16A7C1F23E0AD130059A613 /* Assets.xcassets */,
@@ -200,13 +217,13 @@
 			path = ParqueaderoUITests;
 			sourceTree = "<group>";
 		};
-		D19BC7C923E30AE8005E5CB5 /* ModelDomain */ = {
+		D19BC7C923E30AE8005E5CB5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7D123E32272005E5CB5 /* Controller */,
+				D19BC7D123E32272005E5CB5 /* Services */,
 				D19BC7D223E32278005E5CB5 /* Model */,
 			);
-			path = ModelDomain;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		D19BC7CA23E311E4005E5CB5 /* Entities */ = {
@@ -215,17 +232,20 @@
 				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
 				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
 				D1D98B8623E9C68C00574A35 /* VehicleType.swift */,
-				D1D98B8823EA257300574A35 /* Message.swift */,
+				D1D98B8A23EAFF8800574A35 /* Response.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		D19BC7D123E32272005E5CB5 /* Controller */ = {
+		D19BC7D123E32272005E5CB5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7D323E32288005E5CB5 /* ParkingController.swift */,
+				D1D98B9523EB7DA000574A35 /* Strategy */,
+				D19BC7D323E32288005E5CB5 /* ParkingService.swift */,
+				D1D98B9123EB7D1200574A35 /* GetInVehicleService.swift */,
+				D1D98B9323EB7D6C00574A35 /* GetOutVehicleService.swift */,
 			);
-			path = Controller;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D19BC7D223E32278005E5CB5 /* Model */ = {
@@ -277,9 +297,29 @@
 		D1A164F323E32832008F7D32 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				D1B2BF4623E4A66B0044F90D /* ParkingDAO.swift */,
+				D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */,
+				D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		D1D98B8E23EB19F900574A35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D98B9523EB7DA000574A35 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				D1D98B9623EB7E3E00574A35 /* CalculatePaymentProtocol.swift */,
+				D1D98B9823EB7EE000574A35 /* CalculatePaymentCar.swift */,
+				D1D98B9A23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift */,
+				D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */,
+			);
+			path = Strategy;
 			sourceTree = "<group>";
 		};
 		E5C22DC98E21FA246A70F0D4 /* Pods */ = {
@@ -537,19 +577,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19D1AB523E8BD45003FDB0E /* VehicleCell.swift in Sources */,
-				D1B2BF4723E4A66B0044F90D /* ParkingDAO.swift in Sources */,
+				D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */,
+				D1D98B9B23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift in Sources */,
+				D1D98B9223EB7D1200574A35 /* GetInVehicleService.swift in Sources */,
 				D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */,
 				D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */,
 				D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */,
+				D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */,
 				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
+				D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */,
+				D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */,
+				D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */,
 				D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */,
-				D19BC7D423E32288005E5CB5 /* ParkingController.swift in Sources */,
+				D19BC7D423E32288005E5CB5 /* ParkingService.swift in Sources */,
+				D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
+				D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */,
 				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,
 				D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */,
 				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,
+				D1D98B9423EB7D6C00574A35 /* GetOutVehicleService.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
-				D1D98B8923EA257300574A35 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

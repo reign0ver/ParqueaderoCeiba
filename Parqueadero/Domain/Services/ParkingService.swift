@@ -9,16 +9,17 @@
 import Foundation
 import RealmSwift
 
-class ParkingController {
+class ParkingService {
     
-    let parkingDAO: ParkingDAO = ParkingDAO()
+    let parkingDAO: ParkingDAOImpl = ParkingDAOImpl()
     
-    func addVehicleToTheParking (vehicle: Vehicle) -> String {
-        if isParkingFull().status {
+    func addVehicleToTheParking (vehicle: Vehicle) -> Response<Any> {
+        let response = isParkingFull()
+        if response.status {
             parkingDAO.insert(vehicle)
-            return "Vehicle added successfully!"
+            return Response(status: true, data: "Vehicle added successfully!", error: "")
         } else {
-            return "Parking is full :("
+            return response
         }
     }
     
@@ -42,17 +43,17 @@ class ParkingController {
         return motoCant
     }
     
-    func isParkingFull () -> Message {
+    func isParkingFull () -> Response<Any> {
         let vehicles = parkingDAO.getAllParkedVehicles()
         let carCant = isParkingCarFull(vehicles: vehicles)
         let motoCant = isParkingMotoFull(vehicles: vehicles)
         
         if carCant > 20 {
-            return Message(status: false, message: "Full of cars :(")
+            return Response(status: false, data: "", error: "Full of cars :(")
         } else if motoCant > 10 {
-            return Message(status: false, message: "Full of motos :(")
+            return Response(status: false, data: "", error: "Full of motos :(")
         }
-        return Message(status: true, message: "")
+        return Response(status: true, data: "", error: "")
     }
     
     func removeVehicleInTheParking (_ vehicle: Vehicle) {
@@ -115,7 +116,7 @@ class ParkingController {
         return Vehicle()
     }
     
-    func calculatePay (vehicle: Vehicle) -> Float {
+    func calculatePay (vehicle: Vehicle) -> Response<Any> {
         var priceToPay: Float = 0
         let timeInTheParking = calculateTimeInTheParking(vehicle: vehicle)
         
@@ -123,8 +124,10 @@ class ParkingController {
             priceToPay = calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
         } else if vehicle.type.typeName == "Car" {
             priceToPay = calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
+        } else {
+            return Response(status: false, data: "", error: "Vehicle type not found")
         }
         removeVehicleInTheParking(vehicle)
-        return priceToPay
+        return Response(status: true, data: priceToPay, error: "")
     }
 }

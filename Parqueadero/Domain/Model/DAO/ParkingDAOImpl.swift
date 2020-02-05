@@ -9,19 +9,27 @@
 import Foundation
 import RealmSwift
 
-class ParkingDAO {
+class ParkingDAOImpl: ParkingDAOProtocol {
     
-    var realm = try! Realm()
-//    lazy var vehicles: Results<Vehicle> = {self.realm.objects(Vehicle.self)}()
+    var realm: Realm!
     lazy var vehicleTypes: Results<VehicleType> = {self.realm.objects(VehicleType.self)}()
     
-//    init() {
+    init() {
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
-//    }
+        do {
+            realm = try Realm()
+        } catch let error {
+            print("Error while initializing Realm -> \(error.localizedDescription)")
+        }
+    }
     
-    func insert (_ vehicle : Vehicle) {
-        try! realm.write {
-            realm.add(vehicle)
+    func insert (_ vehicle: Vehicle) {
+        do {
+            try realm.write {
+                realm.add(vehicle)
+            }
+        } catch let error {
+            print("Error while writing into Realm -> \(error.localizedDescription)")
         }
     }
     
@@ -30,8 +38,12 @@ class ParkingDAO {
     }
     
     func removeFromParking (_ vehicle: Vehicle) {
-        try! realm.write {
-            realm.delete(vehicle)
+        do {
+            try realm.write {
+                realm.delete(vehicle)
+            }
+        } catch let error {
+            print("Error while removing from Realm -> \(error.localizedDescription)")
         }
     }
     
