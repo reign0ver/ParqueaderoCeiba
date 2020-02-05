@@ -10,4 +10,8 @@ import Foundation
 
 class CalculatePaymentContext {
     
+    static func getStrategy (_ vehicle: Vehicle) -> CalculatePaymentProtocol {
+        return vehicle.type.typeName == "Car" ? CalculatePaymentCar() : CalculatePaymentMotorcycle()
+    }
+    
 }
