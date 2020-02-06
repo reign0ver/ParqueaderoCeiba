@@ -15,6 +15,8 @@ node('Slave4_Mac') {
         ])
 
         // Build and Test!
-        sh 'xcodebuild -scheme "Parqueadero" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.3"'
+        sh 'xcodebuild -scheme Parqueadero -configuration Debug build test \
+  -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max''
+
     }
 }
