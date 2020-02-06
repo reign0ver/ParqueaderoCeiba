@@ -19,8 +19,8 @@ class ParkingViewModel {
     
     let model = ParkingModel()
     
-    var parkedVehicles: Results<Vehicle>?
-    var parkedVehiclesFiltered: Results<Vehicle>?
+    var parkedVehicles: [Vehicle]?
+    var parkedVehiclesFiltered: [Vehicle]?
     
     var message = ""
     

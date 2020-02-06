@@ -17,7 +17,6 @@
 		D16A7C2323E0AD130059A613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C2123E0AD130059A613 /* LaunchScreen.storyboard */; };
 		D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */; };
 		D16A7C3923E0AD140059A613 /* ParqueaderoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */; };
-		D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7CB23E31210005E5CB5 /* Vehicle.swift */; };
 		D19BC7D423E32288005E5CB5 /* ParkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19BC7D323E32288005E5CB5 /* ParkingService.swift */; };
 		D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */; };
 		D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */; };
@@ -29,7 +28,6 @@
 		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */; };
-		D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8623E9C68C00574A35 /* VehicleType.swift */; };
 		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
 		D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */; };
 		D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */; };
@@ -39,6 +37,11 @@
 		D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9823EB7EE000574A35 /* CalculatePaymentCar.swift */; };
 		D1D98B9B23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9A23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift */; };
 		D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */; };
+		D1D98BA223EC614D00574A35 /* MapperVehicleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BA123EC614D00574A35 /* MapperVehicleProtocol.swift */; };
+		D1D98BA723EC966B00574A35 /* VehicleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BA623EC966B00574A35 /* VehicleEntity.swift */; };
+		D1D98BA923EC96F000574A35 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BA823EC96F000574A35 /* Vehicle.swift */; };
+		D1D98BAB23ECA1DE00574A35 /* MapperVehicleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BAA23ECA1DE00574A35 /* MapperVehicleImpl.swift */; };
+		D1D98BAE23ECA97500574A35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BAD23ECA97500574A35 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +83,6 @@
 		D16A7C3423E0AD140059A613 /* ParqueaderoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParqueaderoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C3823E0AD140059A613 /* ParqueaderoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParqueaderoUITests.swift; sourceTree = "<group>"; };
 		D16A7C3A23E0AD140059A613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D19BC7CB23E31210005E5CB5 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		D19BC7D323E32288005E5CB5 /* ParkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingService.swift; sourceTree = "<group>"; };
 		D19D1AAA23E8B729003FDB0E /* VehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesViewController.swift; sourceTree = "<group>"; };
 		D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewModel.swift; sourceTree = "<group>"; };
@@ -92,7 +94,6 @@
 		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImpl.swift; sourceTree = "<group>"; };
-		D1D98B8623E9C68C00574A35 /* VehicleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleType.swift; sourceTree = "<group>"; };
 		D1D98B8A23EAFF8800574A35 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOProtocol.swift; sourceTree = "<group>"; };
 		D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingModel.swift; sourceTree = "<group>"; };
@@ -102,6 +103,11 @@
 		D1D98B9823EB7EE000574A35 /* CalculatePaymentCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentCar.swift; sourceTree = "<group>"; };
 		D1D98B9A23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentMotorcycle.swift; sourceTree = "<group>"; };
 		D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePaymentContext.swift; sourceTree = "<group>"; };
+		D1D98BA123EC614D00574A35 /* MapperVehicleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperVehicleProtocol.swift; sourceTree = "<group>"; };
+		D1D98BA623EC966B00574A35 /* VehicleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleEntity.swift; sourceTree = "<group>"; };
+		D1D98BA823EC96F000574A35 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		D1D98BAA23ECA1DE00574A35 /* MapperVehicleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperVehicleImpl.swift; sourceTree = "<group>"; };
+		D1D98BAD23ECA97500574A35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +196,7 @@
 				D11FD49523E89BFB0017883D /* ViewModel */,
 				D11FD49423E89BF50017883D /* View */,
 				D19BC7C923E30AE8005E5CB5 /* Domain */,
+				D1D98B9E23EC5F9F00574A35 /* Infrastructure */,
 				D16A7C1623E0AD120059A613 /* AppDelegate.swift */,
 				D16A7C1823E0AD120059A613 /* SceneDelegate.swift */,
 				D16A7C1F23E0AD130059A613 /* Assets.xcassets */,
@@ -220,6 +227,7 @@
 		D19BC7C923E30AE8005E5CB5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D1D98BAC23ECA3F200574A35 /* Port */,
 				D19BC7D123E32272005E5CB5 /* Services */,
 				D19BC7D223E32278005E5CB5 /* Model */,
 			);
@@ -229,10 +237,8 @@
 		D19BC7CA23E311E4005E5CB5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D19BC7CB23E31210005E5CB5 /* Vehicle.swift */,
-				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
-				D1D98B8623E9C68C00574A35 /* VehicleType.swift */,
 				D1D98B8A23EAFF8800574A35 /* Response.swift */,
+				D1D98BA623EC966B00574A35 /* VehicleEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -251,7 +257,7 @@
 		D19BC7D223E32278005E5CB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1A164F323E32832008F7D32 /* DAO */,
+				D1D98BA523EC91F800574A35 /* DTO */,
 				D19BC7CA23E311E4005E5CB5 /* Entities */,
 			);
 			path = Model;
@@ -270,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */,
+				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
+				D1D98BAD23ECA97500574A35 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -297,7 +305,6 @@
 		D1A164F323E32832008F7D32 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */,
 				D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */,
 			);
 			path = DAO;
@@ -320,6 +327,48 @@
 				D1D98B9C23EB806500574A35 /* CalculatePaymentContext.swift */,
 			);
 			path = Strategy;
+			sourceTree = "<group>";
+		};
+		D1D98B9E23EC5F9F00574A35 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				D1D98BA023EC613E00574A35 /* Mapper */,
+				D1D98B9F23EC5FC200574A35 /* Adapter */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D1D98B9F23EC5FC200574A35 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		D1D98BA023EC613E00574A35 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				D1D98BA123EC614D00574A35 /* MapperVehicleProtocol.swift */,
+				D1D98BAA23ECA1DE00574A35 /* MapperVehicleImpl.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		D1D98BA523EC91F800574A35 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D1D98BA823EC96F000574A35 /* Vehicle.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		D1D98BAC23ECA3F200574A35 /* Port */ = {
+			isa = PBXGroup;
+			children = (
+				D1A164F323E32832008F7D32 /* DAO */,
+			);
+			path = Port;
 			sourceTree = "<group>";
 		};
 		E5C22DC98E21FA246A70F0D4 /* Pods */ = {
@@ -576,21 +625,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D98BAE23ECA97500574A35 /* Constants.swift in Sources */,
+				D1D98BA923EC96F000574A35 /* Vehicle.swift in Sources */,
+				D1D98BAB23ECA1DE00574A35 /* MapperVehicleImpl.swift in Sources */,
 				D19D1AB523E8BD45003FDB0E /* VehicleCell.swift in Sources */,
 				D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */,
 				D1D98B9B23EB7EF000574A35 /* CalculatePaymentMotorcycle.swift in Sources */,
+				D1D98BA723EC966B00574A35 /* VehicleEntity.swift in Sources */,
 				D1D98B9223EB7D1200574A35 /* GetInVehicleService.swift in Sources */,
 				D19D1AAD23E8B87C003FDB0E /* ParkingViewModel.swift in Sources */,
 				D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */,
 				D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */,
 				D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */,
-				D19BC7CC23E31210005E5CB5 /* Vehicle.swift in Sources */,
 				D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */,
 				D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */,
 				D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */,
-				D1D98B8723E9C68C00574A35 /* VehicleType.swift in Sources */,
 				D19BC7D423E32288005E5CB5 /* ParkingService.swift in Sources */,
 				D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */,
+				D1D98BA223EC614D00574A35 /* MapperVehicleProtocol.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
 				D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */,
 				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,
@@ -775,7 +827,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -796,7 +848,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

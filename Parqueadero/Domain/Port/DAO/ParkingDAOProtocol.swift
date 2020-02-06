@@ -11,7 +11,7 @@ import RealmSwift
 
 protocol ParkingDAOProtocol {
     func insert (_ vehicle: Vehicle)
-    func getAllParkedVehicles () -> Results<Vehicle>
+    func getAllParkedVehicles () -> [Vehicle]
     func removeFromParking (_ vehicle: Vehicle)
-    func populateVehicleTypes ()
+//    func populateVehicleTypes ()
 }

@@ -27,15 +27,19 @@ class AddVehicleViewController: UIViewController {
     }
     
     @objc private func save () {
-        let vehicleType = VehicleType()
-        vehicleType.typeName = type.text!
-        let newVehicle = Vehicle()
-        newVehicle.licencePlate = licenceName.text!
-        newVehicle.cc = Int16(cc.text!) ?? 0
-        newVehicle.type = vehicleType
+        if let licenceName = licenceName.text, let type = type.text {
+            let newVehicle = Vehicle(
+                licencePlate: licenceName,
+                type: type,
+                cc: Int16(cc.text ?? "")!,
+                date: Date()
+            )
+            viewModel.addVehicle(newVehicle)
+        } else {
+            //print all fields must be filled
+        }
         
-        viewModel.addVehicle(newVehicle)
-        
+        //mover
         let alerta = UIAlertController(title: "Alert!", message: viewModel.message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alerta.addAction(ok)

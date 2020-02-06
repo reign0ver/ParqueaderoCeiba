@@ -10,8 +10,12 @@ import Foundation
 
 class CalculatePaymentContext {
     
-    static func getStrategy (_ vehicle: Vehicle) -> CalculatePaymentProtocol {
-        return vehicle.type.typeName == "Car" ? CalculatePaymentCar() : CalculatePaymentMotorcycle()
-    }
+    private static let strategies: [String: CalculatePaymentProtocol] = [
+        "CAR": CalculatePaymentCar(),
+        "MOTORCYCLE": CalculatePaymentMotorcycle()
+    ]
     
+    static func getStrategy (type: String) -> CalculatePaymentProtocol {
+        return strategies[type]!
+    }
 }

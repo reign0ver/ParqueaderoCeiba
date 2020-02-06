@@ -11,7 +11,7 @@ import Foundation
 class GetOutVehicleService {
     
     func calculatePayment (_ vehicle: Vehicle) -> Float {
-        let calculatePaymentStrategy: CalculatePaymentProtocol = CalculatePaymentContext.getStrategy(vehicle)
+        let calculatePaymentStrategy: CalculatePaymentProtocol = CalculatePaymentContext.getStrategy(type: vehicle.type)
         return calculatePaymentStrategy.calculatePayment(vehicle)
     }
     

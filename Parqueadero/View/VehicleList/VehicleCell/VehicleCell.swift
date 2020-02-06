@@ -25,9 +25,7 @@ class VehicleCell: UITableViewCell {
     func configureCell (_ vehicle: Vehicle) {
         licenceName.text = "Licence Plate: \(vehicle.licencePlate)"
 //        entranceTime.text = "Entrance Time: \(vehicle.date)"
-        if let type = vehicle.type {
-            imageType.image = type.typeName == "Car" ? UIImage(named: "carro") : UIImage(named: "moto")
-        }
+        imageType.image = vehicle.type == "Car" ? UIImage(named: "carro") : UIImage(named: "moto")
     }
     
 }

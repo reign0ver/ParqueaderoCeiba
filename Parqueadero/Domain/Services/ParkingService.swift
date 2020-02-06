@@ -23,20 +23,20 @@ class ParkingService {
         }
     }
     
-    func isParkingCarFull (vehicles: Results<Vehicle>) -> Int8 {
+    func isParkingCarFull (vehicles: [Vehicle]) -> Int8 {
         var carCant: Int8 = 0
         for v in vehicles {
-            if v.type!.typeName == "Car" {
+            if v.type == "Car" {
                 carCant += 1
             }
         }
         return carCant
     }
     
-    func isParkingMotoFull (vehicles: Results<Vehicle>) -> Int8 {
+    func isParkingMotoFull (vehicles: [Vehicle]) -> Int8 {
         var motoCant: Int8 = 0
         for v in vehicles {
-            if v.type!.typeName == "Motorcycle" {
+            if v.type == "Motorcycle" {
                 motoCant += 1
             }
         }
@@ -60,7 +60,7 @@ class ParkingService {
         parkingDAO.removeFromParking(vehicle)
     }
     
-    func getAllParkedVehicles () -> Results<Vehicle> {
+    func getAllParkedVehicles () -> [Vehicle] {
         return parkingDAO.getAllParkedVehicles()
     }
     
@@ -113,16 +113,16 @@ class ParkingService {
     }
     
     func findVehicleIntoTheParking (licencePlate: String) -> Vehicle {
-        return Vehicle()
+        return Vehicle(licencePlate: "", type: "", cc: 0, date: Date())
     }
     
     func calculatePay (vehicle: Vehicle) -> Response<Any> {
         var priceToPay: Float = 0
         let timeInTheParking = calculateTimeInTheParking(vehicle: vehicle)
         
-        if vehicle.type.typeName == "Motorcycle" {
+        if vehicle.type == "Motorcycle" {
             priceToPay = calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
-        } else if vehicle.type.typeName == "Car" {
+        } else if vehicle.type == "Car" {
             priceToPay = calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
         } else {
             return Response(status: false, data: "", error: "Vehicle type not found")

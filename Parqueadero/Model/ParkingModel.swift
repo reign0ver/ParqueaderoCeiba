@@ -16,7 +16,7 @@ enum ModelResponse <T> {
 
 typealias ModelCompletion = ( (_ response: ModelResponse<Any>) -> Void )
 
-class ParkingModel {
+class ParkingModel { //rename it pending - ParkingRepository(?)
     
     let parkingController = ParkingService()
     
@@ -38,7 +38,7 @@ class ParkingModel {
         }
     }
     
-    func getAllVehicles () -> Results<Vehicle> {
+    func getAllVehicles () -> [Vehicle] {
         parkingController.getAllParkedVehicles()
     }
     
