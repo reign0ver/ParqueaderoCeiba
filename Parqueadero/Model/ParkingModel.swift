@@ -21,20 +21,20 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     let parkingController = ParkingService()
     
     func addVehicle (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        let response = parkingController.addVehicleToTheParking(vehicle: vehicle)
-        if response.status {
-            completion(.success(result: response.data))
+        let response = parkingController.getInToTheParking(vehicle: vehicle)
+        if response.success {
+            completion(.success(result: response.data!))
         } else {
-            completion(.failure(error: response.error))
+            completion(.failure(error: response.error!))
         }
     }
     
     func removeVehicleFromTheParking (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        let response = parkingController.calculatePay(vehicle: vehicle)
-        if response.status {
-            completion(.success(result: response.data))
+        let response = parkingController.getOutFromTheParking(vehicle: vehicle)
+        if response.success {
+            completion(.success(result: response.data!))
         } else {
-            completion(.failure(error: response.error))
+            completion(.failure(error: response.error!))
         }
     }
     

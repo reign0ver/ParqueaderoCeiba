@@ -9,7 +9,7 @@
 import Foundation
 
 struct Response <T> {
-    var status: Bool
-    var data: T
-    var error: String
+    var success: Bool
+    var data: T?
+    var error: String?
 }

@@ -10,7 +10,8 @@ import Foundation
 
 class CalculatePaymentCar: CalculatePaymentProtocol {
     
-    func calculatePayment(_ vehicle: Vehicle) -> Float {
-        return 0
+    func calculatePayment(_ vehicle: Vehicle) -> Double {
+        let (days, hours) = CalculateTimeService.calculateTime(vehicle: vehicle)
+        return (CarPrices.day.rawValue * Double(days)) + (CarPrices.hour.rawValue * Double(hours))
     }
 }

@@ -12,7 +12,6 @@ import RealmSwift
 class ParkingDAOImpl: ParkingDAOProtocol {
     
     var realm: Realm!
-//    lazy var vehicleTypes: Results<VehicleType> = {self.realm.objects(VehicleType.self)}()
     
     init() {
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -33,23 +32,6 @@ class ParkingDAOImpl: ParkingDAOProtocol {
         }
     }
     
-    func getAllParkedVehicles () -> [Vehicle] {
-        return MapperVehicleImpl.mapRealmListToArray(realm.objects(VehicleEntity.self))
-    }
-    
-    func findVehicle (_ licenceName: String) -> Vehicle? {
-        let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate contains \(licenceName)")
-        if let vEntity = vehicleEntity.first {
-            return MapperVehicleImpl.mapIntoVehicle(vEntity)
-        }
-        return nil
-    }
-    
-    func getCountByVehicleType (type: String) -> Int {
-        let vehicleType = realm.objects(VehicleEntity.self).filter("type = '\(type)'")
-        return vehicleType.count
-    }
-    
     func removeFromParking (_ vehicle: Vehicle) {
         do {
             try realm.write {
@@ -60,20 +42,20 @@ class ParkingDAOImpl: ParkingDAOProtocol {
         }
     }
     
-    //se implementa? o mejor como constantes?
+    func findVehicle (_ licenceName: String) -> Vehicle? {
+        let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate contains \(licenceName)")
+        if let vEntity = vehicleEntity.first {
+            return MapperVehicleImpl.mapIntoVehicle(vEntity)
+        }
+        return nil
+    }
     
-//    func populateVehicleTypes () {
-//        if vehicleTypes.count == 0 {
-//            try! realm.write() {
-//                let defaultTypes = ["Car", "Motorcycle"]
-//
-//                for type in defaultTypes {
-//                    let newType = VehicleType()
-//                    newType.typeName = type
-//                    realm.add(newType)
-//                }
-//            }
-//            vehicleTypes = realm.objects(VehicleType.self)
-//        }
-//    }
+    func getAllParkedVehicles () -> [Vehicle] {
+        return MapperVehicleImpl.mapRealmListToArray(realm.objects(VehicleEntity.self))
+    }
+    
+    func getCountByVehicleType (type: String) -> Int {
+        let vehicleType = realm.objects(VehicleEntity.self).filter("type = '\(type)'")
+        return vehicleType.count
+    }
 }

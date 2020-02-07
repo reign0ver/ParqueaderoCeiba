@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum CarPrices: Float {
+enum CarPrices: Double {
     case hour = 1_000
     case day = 8_000
 }
 
-enum MotorcyclePrices: Float {
+enum MotorcyclePrices: Double {
     case hour = 500
     case day = 4_000
     case extraCC = 2_000

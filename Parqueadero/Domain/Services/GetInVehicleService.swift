@@ -21,7 +21,7 @@ class GetInVehicleService {
         if let parkingFullError = try isParkingFullByVehicleType(vehicle.type) {
             return parkingFullError
         }
-        if let licencePlateNotAllowed = try canVehicleGetInByLicencePlate(vehicle.licencePlate) {
+        if let licencePlateNotAllowed = try canVehicleGetInToday(vehicle.licencePlate) {
             return licencePlateNotAllowed
         }
         parkingDAO.insert(vehicle)
@@ -30,14 +30,14 @@ class GetInVehicleService {
     
     private func isParkingFullByVehicleType (_ type: String) throws ->  Error? {
         let count = parkingDAO.getCountByVehicleType(type: type)
-        if (type == Constants.carVehicle && count == Constants.carLimit)
-            || (type == Constants.motoVehicle && count == Constants.motorcycleLimit) {
+        if (type.uppercased() == Constants.carVehicle && count == Constants.carLimit)
+            || (type.uppercased() == Constants.motoVehicle && count == Constants.motorcycleLimit) {
             return GetInServiceErrors.parkingIsFull
         }
         return nil
     }
     
-    private func canVehicleGetInByLicencePlate (_ licenceName: String) throws ->  Error? {
+    private func canVehicleGetInToday (_ licenceName: String) throws ->  Error? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayInWeek = dateFormatter.string(from: Date())

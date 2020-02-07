@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CalculatePaymentProtocol {
-    func calculatePayment (_ vehicle: Vehicle) -> Float
+    func calculatePayment (_ vehicle: Vehicle) -> Double
 }
