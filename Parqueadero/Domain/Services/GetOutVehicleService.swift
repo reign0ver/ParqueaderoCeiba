@@ -10,8 +10,11 @@ import Foundation
 
 class GetOutVehicleService {
     
+    let parkingDAO = ParkingDAOImpl()
+    
     func calculatePayment (_ vehicle: Vehicle) -> Float {
         let calculatePaymentStrategy: CalculatePaymentProtocol = CalculatePaymentContext.getStrategy(type: vehicle.type)
+        parkingDAO.removeFromParking(vehicle)
         return calculatePaymentStrategy.calculatePayment(vehicle)
     }
     

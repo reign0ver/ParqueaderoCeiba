@@ -45,6 +45,11 @@ class ParkingDAOImpl: ParkingDAOProtocol {
         return nil
     }
     
+    func getCountByVehicleType (type: String) -> Int {
+        let vehicleType = realm.objects(VehicleEntity.self).filter("type = '\(type)'")
+        return vehicleType.count
+    }
+    
     func removeFromParking (_ vehicle: Vehicle) {
         do {
             try realm.write {

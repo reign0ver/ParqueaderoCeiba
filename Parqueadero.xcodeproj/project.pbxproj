@@ -42,6 +42,7 @@
 		D1D98BA923EC96F000574A35 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BA823EC96F000574A35 /* Vehicle.swift */; };
 		D1D98BAB23ECA1DE00574A35 /* MapperVehicleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BAA23ECA1DE00574A35 /* MapperVehicleImpl.swift */; };
 		D1D98BAE23ECA97500574A35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BAD23ECA97500574A35 /* Constants.swift */; };
+		D1D98BB023ECD94700574A35 /* CalculateTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98BAF23ECD94700574A35 /* CalculateTimeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		D1D98BA823EC96F000574A35 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		D1D98BAA23ECA1DE00574A35 /* MapperVehicleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperVehicleImpl.swift; sourceTree = "<group>"; };
 		D1D98BAD23ECA97500574A35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1D98BAF23ECD94700574A35 /* CalculateTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateTimeService.swift; sourceTree = "<group>"; };
 		F3B3098299A28D581C614509 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +252,7 @@
 				D19BC7D323E32288005E5CB5 /* ParkingService.swift */,
 				D1D98B9123EB7D1200574A35 /* GetInVehicleService.swift */,
 				D1D98B9323EB7D6C00574A35 /* GetOutVehicleService.swift */,
+				D1D98BAF23ECD94700574A35 /* CalculateTimeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */,
 				D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */,
 				D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */,
+				D1D98BB023ECD94700574A35 /* CalculateTimeService.swift in Sources */,
 				D19BC7D423E32288005E5CB5 /* ParkingService.swift in Sources */,
 				D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */,
 				D1D98BA223EC614D00574A35 /* MapperVehicleProtocol.swift in Sources */,
