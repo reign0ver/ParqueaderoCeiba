@@ -27,6 +27,7 @@
 		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */; };
+		D1BB456C23F1E2DE00719A47 /* AddVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */; };
 		D1C0C69523F1A30E00200D98 /* ListVehiclesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */; };
 		D1C0C69923F1B22000200D98 /* SwinjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */; };
 		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
@@ -95,6 +96,7 @@
 		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImpl.swift; sourceTree = "<group>"; };
+		D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewModel.swift; sourceTree = "<group>"; };
 		D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVehiclesService.swift; sourceTree = "<group>"; };
 		D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectExtension.swift; sourceTree = "<group>"; };
 		D1D98B8A23EAFF8800574A35 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D19D1AAC23E8B87C003FDB0E /* ParkingViewModel.swift */,
+				D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				D19D1AAF23E8BC2F003FDB0E /* VehiclesViewControllerHelper.swift in Sources */,
 				D19D1AAB23E8B729003FDB0E /* VehiclesViewController.swift in Sources */,
 				D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */,
+				D1BB456C23F1E2DE00719A47 /* AddVehicleViewModel.swift in Sources */,
 				D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */,
 				D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */,
 				D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */,

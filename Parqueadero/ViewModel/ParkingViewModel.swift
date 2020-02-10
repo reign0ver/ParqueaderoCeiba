@@ -28,17 +28,6 @@ class ParkingViewModel {
         self.model = parkingModel
     }
     
-    func addVehicle (_ vehicle: Vehicle) {
-        model.addVehicle(vehicle) { (response) in
-            switch response {
-            case .success(let data):
-                self.message = data as! String
-            case .failure(let error):
-                self.message = error
-            }
-        }
-    }
-    
     func removeVehicleFromTheParking (_ vehicle: Vehicle) {
         model.removeVehicleFromTheParking(vehicle) { (response) in
             switch response {

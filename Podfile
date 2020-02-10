@@ -7,7 +7,7 @@ target 'Parqueadero' do
   
   pod 'RealmSwift'
   pod 'Swinject'
-  pod 'SwinjectStoryboard'
+  pod 'SwinjectStoryboard', '~> 2.0'
 
   target 'ParqueaderoTests' do
     inherit! :search_paths

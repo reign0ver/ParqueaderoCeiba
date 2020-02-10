@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import SwinjectStoryboard
 
 class VehiclesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = ParkingViewModel()
+    var viewModel: ParkingViewModel?
     let searchController = UISearchController()
+    let sceneDelegate = SceneDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,12 @@ class VehiclesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        viewModel.getAllVehicles()
+        viewModel!.getAllVehicles()
         tableView.reloadData()
     }
     
     private func setupNavbar () {
-        self.navigationItem.title = viewModel.navigationTitle
+        self.navigationItem.title = viewModel!.navigationTitle
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAddVehicle))
     }
@@ -37,7 +39,7 @@ class VehiclesViewController: UIViewController {
     private func setupTableView () {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "VehicleCell", bundle: nil), forCellReuseIdentifier: viewModel.cellId)
+        tableView.register(UINib(nibName: "VehicleCell", bundle: nil), forCellReuseIdentifier: viewModel!.cellId)
     }
     
     private func setupSearchController () {
@@ -49,7 +51,7 @@ class VehiclesViewController: UIViewController {
     }
     
     @objc private func goToAddVehicle () {
-        let story = UIStoryboard(name: "AddVehicle", bundle: nil)
+        let story = SwinjectStoryboard.create(name: "AddVehicle", bundle: nil, container: sceneDelegate.container)
         let viewController = story.instantiateViewController(withIdentifier: "AddVehicleViewController") as! AddVehicleViewController
         self.navigationController?.pushViewController(viewController, animated: true)
     }
@@ -59,10 +61,10 @@ class VehiclesViewController: UIViewController {
 
 extension VehiclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = !isFiltering ? viewModel.parkedVehicles.count : viewModel.parkedVehiclesFiltered.count
+        let count = !isFiltering ? viewModel!.parkedVehicles.count : viewModel!.parkedVehiclesFiltered.count
         
         if count == 0 {
-            tableView.setEmptyMessage(viewModel.emptyListMessage)
+            tableView.setEmptyMessage(viewModel!.emptyListMessage)
         } else {
             tableView.restore()
         }
@@ -70,8 +72,8 @@ extension VehiclesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellId) as! VehicleCell
-        let vehicle = !isFiltering ? viewModel.parkedVehicles[indexPath.row] : viewModel.parkedVehiclesFiltered[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel!.cellId) as! VehicleCell
+        let vehicle = !isFiltering ? viewModel!.parkedVehicles[indexPath.row] : viewModel!.parkedVehiclesFiltered[indexPath.row]
         cell.configureCell(vehicle)
         return cell
     }
@@ -85,16 +87,16 @@ extension VehiclesViewController: UITableViewDataSource {
 
 extension VehiclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectedVehicle = !isFiltering ? viewModel.parkedVehicles[indexPath.row] : viewModel.parkedVehiclesFiltered[indexPath.row]
+        let selectedVehicle = !isFiltering ? viewModel!.parkedVehicles[indexPath.row] : viewModel!.parkedVehiclesFiltered[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
             let alert = UIAlertController(title: "You're going to delete a vehicle", message: "Are you sure you want to remove the vehicle from the parking?", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                self.viewModel.removeVehicleFromTheParking(selectedVehicle)
-                let alert = UIAlertController(title: "Total to pay!", message: "Your debt is \(self.viewModel.message)", preferredStyle: .alert)
+                self.viewModel!.removeVehicleFromTheParking(selectedVehicle)
+                let alert = UIAlertController(title: "Total to pay!", message: "Your debt is \(self.viewModel!.message)", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
                 self.present(alert, animated: true, completion: nil)
                 alert.addAction(ok)
-                self.viewModel.parkedVehicles.remove(at: indexPath.row)
+                self.viewModel!.parkedVehicles.remove(at: indexPath.row)
                 tableView.reloadData()
             })
             let cancel = UIAlertAction(title: "CANCEL", style: .destructive, handler: nil)

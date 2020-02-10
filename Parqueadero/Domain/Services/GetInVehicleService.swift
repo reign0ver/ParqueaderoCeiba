@@ -10,7 +10,7 @@ import Foundation
 
 enum GetInServiceErrors: String, Error {
     case parkingIsFull = "Parking is full :("
-    case licencePlateNotAllowed = "You cannot get it :(.  Your licence plate is only allowed on Sunday and Monday"
+    case licencePlateNotAllowed = "You cannot get in :(.  Your licence plate is only allowed to entry on Sunday and Monday"
     case alreadyExists = "The vehicle you're trying to register is already in the park"
 }
 

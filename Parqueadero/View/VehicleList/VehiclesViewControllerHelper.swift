@@ -19,7 +19,7 @@ extension VehiclesViewController {
     }
     
     func filterResultsWithSearchString(_ searchText: String) {
-        viewModel.parkedVehiclesFiltered = viewModel.parkedVehicles.filter {
+        viewModel!.parkedVehiclesFiltered = viewModel!.parkedVehicles.filter {
             return $0.licencePlate.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()

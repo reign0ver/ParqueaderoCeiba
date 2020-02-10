@@ -7,17 +7,15 @@
 //
 
 import Foundation
-import Swinject
+import SwinjectStoryboard
 
-class SwinjectServices {
-    
-    let container = Container()
-    
-    func setup () {
-        container.register(ParkingModel.self) { r in
-            ParkingModel(getInService: r.resolve(GetInVehicleService.self)!,
-                         getOutService: r.resolve(GetOutVehicleService.self)!,
-                         listVehiclesService: r.resolve(ListVehiclesService.self)!)
-        }
-    }
-}
+//extension SwinjectStoryboard {
+//    class func setup() {
+//        defaultContainer.storyboardInitCompleted(VehiclesViewController.self) { r, c in
+//            c.viewModel = r.resolve(ParkingViewModel.self)!
+//        }
+//        defaultContainer.storyboardInitCompleted(AddVehicleViewController.self) { r, c in
+//            c.viewModel = r.resolve(ParkingViewModel.self)!
+//        }
+//    }
+//}

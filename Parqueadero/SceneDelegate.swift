@@ -7,21 +7,59 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    let container: Container = {
+        let container = Container()
+        //Model
+        container.register(GetInVehicleService.self) { _ in
+            GetInVehicleService()
+        }
+        container.register(GetOutVehicleService.self) { _ in
+            GetOutVehicleService()
+        }
+        container.register(ListVehiclesService.self) { _ in
+            ListVehiclesService()
+        }
+        container.register(ParkingModel.self) { r in
+            ParkingModel(getInService: r.resolve(GetInVehicleService.self)!,
+                         getOutService: r.resolve(GetOutVehicleService.self)!,
+                         listVehiclesService: r.resolve(ListVehiclesService.self)!)
+        }
+        //ViewModel
+        container.register(ParkingViewModel.self) { r in
+             ParkingViewModel(parkingModel: r.resolve(ParkingModel.self)!)
+        }
+        container.register(AddVehicleViewModel.self) { r in
+             AddVehicleViewModel(parkingModel: r.resolve(ParkingModel.self)!)
+        }
+        //Views
+        container.storyboardInitCompleted(VehiclesViewController.self) { (r, c) in
+            c.viewModel = r.resolve(ParkingViewModel.self)!
+        }
+        container.storyboardInitCompleted(AddVehicleViewController.self) { (r, c) in
+            c.viewModel = r.resolve(AddVehicleViewModel.self)!
+        }
+        return container
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let winScene = (scene as? UIWindowScene) else { return }
         let win = UIWindow(windowScene: winScene)
-        let story = UIStoryboard(name: "Vehicles", bundle: nil)
-        let viewController = story.instantiateViewController(withIdentifier: "VehiclesViewController") as! VehiclesViewController
-        win.rootViewController = UINavigationController(rootViewController: viewController)
+//        let story = UIStoryboard(name: "Vehicles", bundle: nil)
+//        let viewController = story.instantiateViewController(withIdentifier: "VehiclesViewController") as! VehiclesViewController
+//        win.rootViewController = UINavigationController(rootViewController: viewController)
+        
+//        self.window = win
+        let storyboard = SwinjectStoryboard.create(name: "Vehicles", bundle: nil, container: container)
+        let vController = storyboard.instantiateViewController(withIdentifier: "VehiclesViewController") as! VehiclesViewController
+        win.rootViewController = UINavigationController(rootViewController: vController)
+        
         win.makeKeyAndVisible()
         window = win
     }
