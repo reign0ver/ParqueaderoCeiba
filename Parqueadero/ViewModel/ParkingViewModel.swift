@@ -17,12 +17,16 @@ class ParkingViewModel {
     let newVehicleNavTitle = "New Vehicle"
     let emptyListMessage = "Parking is empty"
     
-    let model = ParkingModel()
+    private let model: ParkingModel
     
     var parkedVehicles: [Vehicle] = []
     var parkedVehiclesFiltered: [Vehicle] = []
     
     var message = ""
+    
+    init(parkingModel: ParkingModel) {
+        self.model = parkingModel
+    }
     
     func addVehicle (_ vehicle: Vehicle) {
         model.addVehicle(vehicle) { (response) in

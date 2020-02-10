@@ -5,22 +5,27 @@ PODS:
   - RealmSwift (4.3.1):
     - Realm (= 4.3.1)
   - Swinject (2.7.1)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
   - RealmSwift
   - Swinject
+  - SwinjectStoryboard
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
     - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   Realm: 31dc40934081ef740f60feedc46d88473cbfeb40
   RealmSwift: b5199e9a41f67b99f51acf6874a6166f5fbe93d1
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 0954be9ac09bb9cf66e044ed1aa6eed951360b80
+PODFILE CHECKSUM: 0ec1b37907665244fbca39f0b2ba6c9b05ab71f0
 
 COCOAPODS: 1.8.4

@@ -28,6 +28,7 @@
 		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */; };
 		D1C0C69523F1A30E00200D98 /* ListVehiclesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */; };
+		D1C0C69923F1B22000200D98 /* SwinjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */; };
 		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
 		D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */; };
 		D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */; };
@@ -95,6 +96,7 @@
 		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImpl.swift; sourceTree = "<group>"; };
 		D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVehiclesService.swift; sourceTree = "<group>"; };
+		D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectExtension.swift; sourceTree = "<group>"; };
 		D1D98B8A23EAFF8800574A35 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOProtocol.swift; sourceTree = "<group>"; };
 		D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingModel.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */,
 				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
 				D1D98BAD23ECA97500574A35 /* Constants.swift */,
+				D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				D1D98BA223EC614D00574A35 /* MapperVehicleProtocol.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
 				D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */,
+				D1C0C69923F1B22000200D98 /* SwinjectExtension.swift in Sources */,
 				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,
 				D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */,
 				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,

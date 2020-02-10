@@ -22,8 +22,13 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     var getOutService: GetOutVehicleService!
     var listVehiclesService: ListVehiclesService!
     
+    init(getInService: GetInVehicleService, getOutService: GetOutVehicleService, listVehiclesService: ListVehiclesService) {
+        self.getInService = getInService
+        self.getOutService = getOutService
+        self.listVehiclesService = listVehiclesService
+    }
+    
     func addVehicle (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        getInService = GetInVehicleService()
         let response = getInService.getInVehicle(vehicle)
         if response.success {
             completion(.success(result: response.data!))
@@ -33,7 +38,6 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     }
     
     func removeVehicleFromTheParking (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        getOutService = GetOutVehicleService()
         let response = getOutService.getOutVehicle(vehicle)
         if response.success {
             completion(.success(result: response.data!))
@@ -43,7 +47,6 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     }
     
     func getAllVehicles () -> [Vehicle] {
-        listVehiclesService = ListVehiclesService()
         return listVehiclesService.getAllParkedVehicles()
     }
     
