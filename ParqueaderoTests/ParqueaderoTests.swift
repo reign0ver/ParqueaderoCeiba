@@ -54,13 +54,33 @@ class ParqueaderoTests: XCTestCase {
     
     func testCalculateTimeInTheParking () {
         //Arrange
+        let seconds = vehicle.date.distance(to: Date())
+        var days: Int = Int(seconds / Constants.dayInSeconds)
+        var hours: Double = seconds / Constants.hourInSeconds
+        var approxHours: Int
         
+        hours -= Double(days) * Constants.dayInHours
+        if hours > Constants.maxHoursPerDay {
+            days += 1
+            hours -= Constants.maxHoursPerDay
+        }
+        approxHours = Int(hours) + 1
+        //Act
+        let (daysResult, hoursResult) = CalculateTimeService.calculateTime(vehicle: vehicle)
+        //Assert
+        XCTAssertEqual(daysResult, days)
+        XCTAssertEqual(hoursResult, approxHours)
+    }
+    
+    func testCanGetInWhenLicencePlateStartsWithA () {
+        //Arrange
+        let expectedMessage = "You cannot get in :(.  Your licence plate is only allowed to entry on Sunday and Monday"
         //Act
         
         //Assert
     }
     
-    func testCanGetInWhenLicencePlateStartsWithA () {
+    func testAlreadyExistsTheVehicleInThePark () {
         //Arrange
         
         //Act
