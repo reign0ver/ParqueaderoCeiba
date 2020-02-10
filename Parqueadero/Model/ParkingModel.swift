@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 enum ModelResponse <T> {
     case success (result: T)
@@ -18,9 +17,9 @@ typealias ModelCompletion = ( (_ response: ModelResponse<Any>) -> Void )
 
 class ParkingModel { //rename it pending - ParkingRepository(?)
     
-    var getInService: GetInVehicleService!
-    var getOutService: GetOutVehicleService!
-    var listVehiclesService: ListVehiclesService!
+    var getInService: GetInVehicleService
+    var getOutService: GetOutVehicleService
+    var listVehiclesService: ListVehiclesService
     
     init(getInService: GetInVehicleService, getOutService: GetOutVehicleService, listVehiclesService: ListVehiclesService) {
         self.getInService = getInService

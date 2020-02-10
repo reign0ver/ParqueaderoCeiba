@@ -22,6 +22,7 @@ class AddVehicleViewController: UIViewController {
     }
     
     private func setupNavbar () {
+
         navigationItem.title = viewModel?.newVehicleNavTitle
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(save))
     }

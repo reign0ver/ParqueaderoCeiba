@@ -45,12 +45,12 @@ class ParkingDAOImpl: ParkingDAOProtocol {
         }
     }
     
-    func findVehicle (_ licenceName: String) -> VehicleEntity? {
+    func findVehicle (_ licenceName: String) -> Bool {
         let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate == '\(licenceName)'")
-        if let vEntity = vehicleEntity.first {
-            return vEntity
+        if let _ = vehicleEntity.first {
+            return true
         }
-        return nil
+        return false
     }
     
     func getAllParkedVehicles () -> [Vehicle] {

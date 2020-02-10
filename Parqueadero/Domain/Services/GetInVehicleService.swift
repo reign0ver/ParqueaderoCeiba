@@ -19,7 +19,7 @@ class GetInVehicleService {
     let parkingDAO = ParkingDAOImpl()
     
     func getInVehicle (_ vehicle: Vehicle) -> Response<Any> {
-        if parkingDAO.findVehicle(vehicle.licencePlate) != nil {
+        if parkingDAO.findVehicle(vehicle.licencePlate) {
             return Response(success: false, data: nil, error: GetInServiceErrors.alreadyExists.rawValue)
         }
         
