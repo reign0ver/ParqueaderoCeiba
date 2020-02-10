@@ -6,6 +6,7 @@ target 'Parqueadero' do
   use_frameworks!
   
   pod 'RealmSwift'
+  pod 'Swinject'
 
   target 'ParqueaderoTests' do
     inherit! :search_paths
