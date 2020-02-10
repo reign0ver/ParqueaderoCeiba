@@ -51,97 +51,97 @@ class ParqueaderoTests: XCTestCase {
         dateComponentsEntrance.timeZone = .current
     }
     
-    func testMotorcycleIsGreaterThan500CC () {
-        //Arrange
-        vehicle.cc = 650
-        //Act
-        let condition = parkingController.isGreaterThan500CC(vehicle: vehicle)
-        //Assert
-        XCTAssertEqual(condition, true)
-    }
-    
-    func testCalculateTimeInTheParking () {
-        //Arrange
-        
-        //Act
-        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
-//        parkingController.calculateTime(vehicle: vehicle)
-        
-        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
-        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
-            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
-            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
-        
-        //Assert
-        XCTAssertEqual(timeInTheParking.0, days)
-        XCTAssertEqual(timeInTheParking.1, hours)
-        
-    }
-    
-    func testCalculatePayCar () {
-        //Arrange
-        vehicle.type = "CAR"
-        
-        //Act
-        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
-        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
-            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
-            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
-        
-        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
-        let totalToPay = parkingController.calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
-        
-        //Assert
-        XCTAssertEqual(totalToPay, (CarPrices.day.rawValue * Float(days)) + (CarPrices.hour.rawValue * Float(hours)))
-        
-    }
-    
-    func testCalculatePayMotorcycleIfNot500CC () {
-        //Arrange
-        vehicle.cc = 200
-        
-        //Act
-        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
-        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
-            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
-            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
-        
-        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
-        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
-        
-        //Assert
-        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)))
-    }
-    
-    func testCalculatePayMotorcycleIf500CC () {
-        //Arrange
-        vehicle.cc = 650
-        
-        //Act
-        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
-        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
-            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
-            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
-        
-        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
-        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
-        
-        //Assert
-        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)) + MotorcyclePrices.extraCC.rawValue)
-    }
-    
-    func testIfParkingIsNotFull () { //MOCK
-        //Arrange
-        
-        //Act
-        let added = parkingController.registerEntryToTheParking(vehicle: vehicle)
-        let str = added.data as! String
-        //Assert
-        XCTAssertEqual(str, "Vehicle added successfully!")
-    }
-    
-    func testParkingIsFull () {
-        
-    }
+//    func testMotorcycleIsGreaterThan500CC () {
+//        //Arrange
+//        vehicle.cc = 650
+//        //Act
+//        let condition = parkingController.isGreaterThan500CC(vehicle: vehicle)
+//        //Assert
+//        XCTAssertEqual(condition, true)
+//    }
+//    
+//    func testCalculateTimeInTheParking () {
+//        //Arrange
+//        
+//        //Act
+//        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+////        parkingController.calculateTime(vehicle: vehicle)
+//        
+//        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+//        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+//            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+//            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+//        
+//        //Assert
+//        XCTAssertEqual(timeInTheParking.0, days)
+//        XCTAssertEqual(timeInTheParking.1, hours)
+//        
+//    }
+//    
+//    func testCalculatePayCar () {
+//        //Arrange
+//        vehicle.type = "CAR"
+//        
+//        //Act
+//        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+//        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+//            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+//            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+//        
+//        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+//        let totalToPay = parkingController.calculatePayCar(vehicle: vehicle, totalTime: timeInTheParking)
+//        
+//        //Assert
+//        XCTAssertEqual(totalToPay, (CarPrices.day.rawValue * Float(days)) + (CarPrices.hour.rawValue * Float(hours)))
+//        
+//    }
+//    
+//    func testCalculatePayMotorcycleIfNot500CC () {
+//        //Arrange
+//        vehicle.cc = 200
+//        
+//        //Act
+//        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+//        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+//            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+//            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+//        
+//        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+//        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
+//        
+//        //Assert
+//        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)))
+//    }
+//    
+//    func testCalculatePayMotorcycleIf500CC () {
+//        //Arrange
+//        vehicle.cc = 650
+//        
+//        //Act
+//        let days = dateComponentsOut.day! - dateComponentsEntrance.day!
+//        let hours = dateComponentsEntrance.hour! > dateComponentsOut.hour!
+//            ? 24 - (dateComponentsEntrance.hour! - dateComponentsOut.hour!)
+//            : dateComponentsOut.hour! - dateComponentsEntrance.hour!
+//        
+//        let timeInTheParking = parkingController.calculateTimeInTheParking(vehicle: vehicle)
+//        let totalToPay = parkingController.calculatePayMotorcycle(vehicle: vehicle, totalTime: timeInTheParking)
+//        
+//        //Assert
+//        XCTAssertEqual(totalToPay, (MotorcyclePrices.day.rawValue * Float(days)) + (MotorcyclePrices.hour.rawValue * Float(hours)) + MotorcyclePrices.extraCC.rawValue)
+//    }
+//    
+//    func testIfParkingIsNotFull () { //MOCK
+//        //Arrange
+//        
+//        //Act
+//        let added = parkingController.registerEntryToTheParking(vehicle: vehicle)
+//        let str = added.data as! String
+//        //Assert
+//        XCTAssertEqual(str, "Vehicle added successfully!")
+//    }
+//    
+//    func testParkingIsFull () {
+//        
+//    }
 
 }

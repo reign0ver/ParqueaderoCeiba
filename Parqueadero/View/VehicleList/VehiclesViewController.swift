@@ -55,14 +55,23 @@ class VehiclesViewController: UIViewController {
     }
 }
 
+//MARK: - TableView DataSource
+
 extension VehiclesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.parkedVehicles!.count
+        let count = !isFiltering ? viewModel.parkedVehicles.count : viewModel.parkedVehiclesFiltered.count
+        
+        if count == 0 {
+            tableView.setEmptyMessage(viewModel.emptyListMessage)
+        } else {
+            tableView.restore()
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellId) as! VehicleCell
-        let vehicle = !isFiltering ? viewModel.parkedVehicles![indexPath.row] : viewModel.parkedVehiclesFiltered![indexPath.row]
+        let vehicle = !isFiltering ? viewModel.parkedVehicles[indexPath.row] : viewModel.parkedVehiclesFiltered[indexPath.row]
         cell.configureCell(vehicle)
         return cell
     }
@@ -72,9 +81,11 @@ extension VehiclesViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - TableView Delegate
+
 extension VehiclesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let selectedVehicle = viewModel.parkedVehicles![indexPath.row]
+        let selectedVehicle = !isFiltering ? viewModel.parkedVehicles[indexPath.row] : viewModel.parkedVehiclesFiltered[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, success) in
             let alert = UIAlertController(title: "You're going to delete a vehicle", message: "Are you sure you want to remove the vehicle from the parking?", preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (_) in
@@ -83,6 +94,7 @@ extension VehiclesViewController: UITableViewDelegate {
                 let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
                 self.present(alert, animated: true, completion: nil)
                 alert.addAction(ok)
+                self.viewModel.parkedVehicles.remove(at: indexPath.row)
                 tableView.reloadData()
             })
             let cancel = UIAlertAction(title: "CANCEL", style: .destructive, handler: nil)
@@ -94,7 +106,13 @@ extension VehiclesViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }
+
+//MARK: - SearchController Extension
 
 extension VehiclesViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {

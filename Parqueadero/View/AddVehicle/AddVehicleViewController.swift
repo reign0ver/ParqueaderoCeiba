@@ -29,8 +29,8 @@ class AddVehicleViewController: UIViewController {
     @objc private func save () {
         if let licenceName = licenceName.text, let type = type.text {
             let newVehicle = Vehicle(
-                licencePlate: licenceName,
-                type: type,
+                licencePlate: licenceName.uppercased(),
+                type: type.uppercased(),
                 cc: Int16(cc.text ?? "")!,
                 date: Date()
             )

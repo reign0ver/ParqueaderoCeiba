@@ -18,10 +18,13 @@ typealias ModelCompletion = ( (_ response: ModelResponse<Any>) -> Void )
 
 class ParkingModel { //rename it pending - ParkingRepository(?)
     
-    let parkingController = ParkingService()
+    var getInService: GetInVehicleService!
+    var getOutService: GetOutVehicleService!
+    var listVehiclesService: ListVehiclesService!
     
     func addVehicle (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        let response = parkingController.getInToTheParking(vehicle: vehicle)
+        getInService = GetInVehicleService()
+        let response = getInService.getInVehicle(vehicle)
         if response.success {
             completion(.success(result: response.data!))
         } else {
@@ -30,7 +33,8 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     }
     
     func removeVehicleFromTheParking (_ vehicle: Vehicle, completion: @escaping ModelCompletion) {
-        let response = parkingController.getOutFromTheParking(vehicle: vehicle)
+        getOutService = GetOutVehicleService()
+        let response = getOutService.getOutVehicle(vehicle)
         if response.success {
             completion(.success(result: response.data!))
         } else {
@@ -39,7 +43,8 @@ class ParkingModel { //rename it pending - ParkingRepository(?)
     }
     
     func getAllVehicles () -> [Vehicle] {
-        parkingController.getAllParkedVehicles()
+        listVehiclesService = ListVehiclesService()
+        return listVehiclesService.getAllParkedVehicles()
     }
     
 }

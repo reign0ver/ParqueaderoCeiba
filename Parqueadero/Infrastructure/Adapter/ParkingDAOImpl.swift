@@ -14,7 +14,7 @@ class ParkingDAOImpl: ParkingDAOProtocol {
     var realm: Realm!
     
     init() {
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         do {
             realm = try Realm()
         } catch let error {
@@ -33,19 +33,22 @@ class ParkingDAOImpl: ParkingDAOProtocol {
     }
     
     func removeFromParking (_ vehicle: Vehicle) {
-        do {
-            try realm.write {
-                realm.delete(MapperVehicleImpl.mapIntoRealmEntities(vehicle))
+        let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate == '\(vehicle.licencePlate)'")
+        if let vEntity = vehicleEntity.first {
+            do {
+                try realm.write {
+                    realm.delete(vEntity)
+                }
+            } catch let error {
+                print("Error while removing from Realm -> \(error.localizedDescription)")
             }
-        } catch let error {
-            print("Error while removing from Realm -> \(error.localizedDescription)")
         }
     }
     
-    func findVehicle (_ licenceName: String) -> Vehicle? {
-        let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate contains \(licenceName)")
+    func findVehicle (_ licenceName: String) -> VehicleEntity? {
+        let vehicleEntity = realm.objects(VehicleEntity.self).filter("licencePlate == '\(licenceName)'")
         if let vEntity = vehicleEntity.first {
-            return MapperVehicleImpl.mapIntoVehicle(vEntity)
+            return vEntity
         }
         return nil
     }

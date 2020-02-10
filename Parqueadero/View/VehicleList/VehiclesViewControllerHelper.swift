@@ -19,12 +19,9 @@ extension VehiclesViewController {
     }
     
     func filterResultsWithSearchString(_ searchText: String) {
-//        let predicate = NSPredicate(format: "licencePlate BEGINSWITH [c]%@", searchText)
-//        let realm = try! Realm()
-//        viewModel.parkedVehiclesFiltered = realm.objects(VehicleEntity.self)
-//            .filter(predicate)
-//            .sorted(byKeyPath: "licencePlate", ascending: true)
-        
+        viewModel.parkedVehiclesFiltered = viewModel.parkedVehicles.filter {
+            return $0.licencePlate.lowercased().contains(searchText.lowercased())
+        }
         tableView.reloadData()
     }
 }

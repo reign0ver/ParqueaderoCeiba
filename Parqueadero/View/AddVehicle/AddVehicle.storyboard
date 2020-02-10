@@ -17,25 +17,16 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Licence Plate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dg5-ld-J7m">
                                 <rect key="frame" x="132" y="69" width="150" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="WOU-Q3-mXw"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GV-tC-Was">
                                 <rect key="frame" x="132" y="113" width="150" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="6d6-bK-Frb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fvg-9E-CDC">
                                 <rect key="frame" x="132" y="157" width="150" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="iNO-ca-5zU"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
