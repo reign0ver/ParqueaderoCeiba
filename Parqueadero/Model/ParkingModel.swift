@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum ModelResponse <T> {
-    case success (result: T)
-    case failure (error: String)
-}
-
 typealias ModelCompletion = ( (_ response: ModelResponse<Any>) -> Void )
 
 class ParkingModel { //rename it pending - ParkingRepository(?)

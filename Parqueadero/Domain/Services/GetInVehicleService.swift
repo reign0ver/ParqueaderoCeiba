@@ -8,15 +8,13 @@
 
 import Foundation
 
-enum GetInServiceErrors: String, Error {
-    case parkingIsFull = "Parking is full :("
-    case licencePlateNotAllowed = "You cannot get in :(.  Your licence plate is only allowed to entry on Sunday and Monday"
-    case alreadyExists = "The vehicle you're trying to register is already in the park"
-}
-
 class GetInVehicleService {
     
-    let parkingDAO = ParkingDAOImpl()
+    var parkingDAO: ParkingDAOImpl
+    
+    init(parkingDAO: ParkingDAOImpl) {
+        self.parkingDAO = parkingDAO
+    }
     
     func getInVehicle (_ vehicle: Vehicle) -> Response<Any> {
         if parkingDAO.findVehicle(vehicle.licencePlate) {
@@ -44,22 +42,22 @@ class GetInVehicleService {
         return Response(success: true, data: Constants.addedVehicleSuccessfully, error: nil)
     }
     
-    private func isParkingFullByVehicleType (_ type: String) throws {
-        let count = parkingDAO.getCountByVehicleType(type: type)
-        if (type.uppercased() == Constants.carVehicle && count == Constants.carLimit)
-            || (type.uppercased() == Constants.motoVehicle && count == Constants.motorcycleLimit) {
+    func isParkingFullByVehicleType (_ type: String) throws {
+        let count = parkingDAO.getCountByVehicleType(type)
+        if (type.uppercased() == Constants.car && count == Constants.carLimit)
+            || (type.uppercased() == Constants.moto && count == Constants.motorcycleLimit) {
             throw GetInServiceErrors.parkingIsFull
         }
     }
     
-    private func canVehicleGetInToday (_ licenceName: String) throws {
+    func canVehicleGetInToday (_ licenceName: String) throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayInWeek = dateFormatter.string(from: Date())
         
         if licenceName.starts(with: Constants.licencePlateStartsWith)
-            && (dayInWeek.uppercased() == Constants.sunday
-                || dayInWeek.uppercased() == Constants.monday) {
+            && (dayInWeek.uppercased() != Constants.sunday
+                || dayInWeek.uppercased() != Constants.monday) {
             throw GetInServiceErrors.licencePlateNotAllowed
         }
     }

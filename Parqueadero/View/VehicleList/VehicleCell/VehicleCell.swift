@@ -24,8 +24,13 @@ class VehicleCell: UITableViewCell {
     
     func configureCell (_ vehicle: Vehicle) {
         licenceName.text = "Licence Plate: \(vehicle.licencePlate)"
-//        entranceTime.text = "Entrance Time: \(vehicle.date)"
-        imageType.image = vehicle.type == "Car" ? UIImage(named: "carro") : UIImage(named: "moto")
+        entranceTime.text = "Entrance Time: \(formatDate(vehicle.date))"
+        imageType.image = vehicle.type == Constants.car ? UIImage(named: "carro") : UIImage(named: "moto")
     }
     
+    private func formatDate (_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        return dateFormatter.string(from: date)
+    }
 }

@@ -19,6 +19,7 @@ class VehiclesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        validateOptionalViewModelForDI()
         setupNavbar()
         setupTableView()
         setupSearchController()
@@ -26,13 +27,23 @@ class VehiclesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        validateOptionalViewModelForDI()
         viewModel!.getAllVehicles()
         tableView.reloadData()
     }
     
+    private func validateOptionalViewModelForDI () {
+        if viewModel == nil {
+            let alert = UIAlertController(title: "Ups!", message: "The App couldn't start correctly and it's about to be closed.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     private func setupNavbar () {
         self.navigationItem.title = viewModel!.navigationTitle
-        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goToAddVehicle))
     }
     
@@ -96,8 +107,16 @@ extension VehiclesViewController: UITableViewDelegate {
                 let ok = UIAlertAction(title: "OK", style: .destructive, handler: nil)
                 self.present(alert, animated: true, completion: nil)
                 alert.addAction(ok)
-                self.viewModel!.parkedVehicles.remove(at: indexPath.row)
-                tableView.reloadData()
+                if !self.isFiltering {
+                    self.viewModel!.parkedVehicles.remove(at: indexPath.row)
+                    tableView.reloadData()
+                } else {
+                    let index = self.viewModel?.parkedVehicles.firstIndex{ $0.licencePlate == selectedVehicle.licencePlate }
+                    self.viewModel!.parkedVehicles.remove(at: index!)
+                    self.viewModel!.parkedVehiclesFiltered.remove(at: indexPath.row)
+                    tableView.reloadData()
+                }
+                
             })
             let cancel = UIAlertAction(title: "CANCEL", style: .destructive, handler: nil)
             alert.addAction(ok)

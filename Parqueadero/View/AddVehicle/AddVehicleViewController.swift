@@ -22,29 +22,38 @@ class AddVehicleViewController: UIViewController {
     }
     
     private func setupNavbar () {
-
         navigationItem.title = viewModel?.newVehicleNavTitle
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(save))
     }
     
     @objc private func save () {
         if let licenceName = licenceName.text, let type = type.text {
-            let newVehicle = Vehicle(
-                licencePlate: licenceName.uppercased(),
-                type: type.uppercased(),
-                cc: Int16(cc.text ?? "0")!,
-                date: Date()
-            )
-            viewModel?.addVehicle(newVehicle)
+            if cc.text == "" {
+                cc.text = "0"
+            }
+            if type.uppercased() == Constants.moto || type.uppercased() == Constants.car {
+                let newVehicle = Vehicle(
+                    licencePlate: licenceName.uppercased(),
+                    type: type.uppercased(),
+                    cc: Int16(cc.text!)!,
+                    date: Date())
+                
+                viewModel?.addVehicle(newVehicle)
+                
+                let alerta = UIAlertController(title: "Alert!", message: viewModel?.message, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alerta.addAction(ok)
+                self.present(alerta, animated: true, completion: nil)
+                
+            } else {
+                let alerta = UIAlertController(title: "Alert!", message: Constants.vehicleTypeNotValid, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alerta.addAction(ok)
+                self.present(alerta, animated: true, completion: nil)
+            }
         } else {
             //print all fields must be filled
         }
-        
-        //mover
-        let alerta = UIAlertController(title: "Alert!", message: viewModel?.message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alerta.addAction(ok)
-        self.present(alerta, animated: true, completion: nil)
     }
     
 }

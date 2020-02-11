@@ -10,7 +10,11 @@ import Foundation
 
 class ListVehiclesService {
     
-    let parkingDAO = ParkingDAOImpl()
+    var parkingDAO: ParkingDAOImpl
+    
+    init(parkingDAO: ParkingDAOImpl) {
+        self.parkingDAO = parkingDAO
+    }
     
     func getAllParkedVehicles () -> [Vehicle] {
         return parkingDAO.getAllParkedVehicles()

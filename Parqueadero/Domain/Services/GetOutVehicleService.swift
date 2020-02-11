@@ -10,7 +10,11 @@ import Foundation
 
 class GetOutVehicleService {
     
-    let parkingDAO = ParkingDAOImpl()
+    var parkingDAO: ParkingDAOImpl
+    
+    init(parkingDAO: ParkingDAOImpl) {
+        self.parkingDAO = parkingDAO
+    }
     
     func getOutVehicle (_ vehicle: Vehicle) -> Response<Any> {
         let totalToPay = calculatePayment(vehicle)

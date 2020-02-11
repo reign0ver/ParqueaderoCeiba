@@ -13,4 +13,6 @@ protocol ParkingDAOProtocol {
     func insert (_ vehicle: Vehicle)
     func getAllParkedVehicles () -> [Vehicle]
     func removeFromParking (_ vehicle: Vehicle)
+    func findVehicle (_ licenceName: String) -> Bool
+    func getCountByVehicleType (_ type: String) -> Int
 }

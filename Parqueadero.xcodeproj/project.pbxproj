@@ -11,6 +11,7 @@
 		8F2D46D5C12B052BB3F7D80E /* Pods_ParqueaderoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658D7708C7DABD79215BEDA0 /* Pods_ParqueaderoTests.framework */; };
 		A0CD371127725E43250CB8EC /* Pods_Parqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F360D18295FBD8D9EEB557E /* Pods_Parqueadero.framework */; };
 		D11FD49923E8A7C00017883D /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11FD49823E8A7C00017883D /* Vehicles.storyboard */; };
+		D15962AD23F3538000C0814B /* ParkingDAOImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */; };
 		D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1623E0AD120059A613 /* AppDelegate.swift */; };
 		D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1823E0AD120059A613 /* SceneDelegate.swift */; };
 		D16A7C2023E0AD130059A613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C1F23E0AD130059A613 /* Assets.xcassets */; };
@@ -25,11 +26,13 @@
 		D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */; };
 		D19D1ABD23E8C4A8003FDB0E /* AddVehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */; };
 		D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */; };
-		D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* ParkingPrices.swift */; };
+		D1A164F723E35479008F7D32 /* EnumParkingPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A164F623E35479008F7D32 /* EnumParkingPrices.swift */; };
 		D1B2BF4723E4A66B0044F90D /* ParkingDAOImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */; };
 		D1BB456C23F1E2DE00719A47 /* AddVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */; };
+		D1BB456E23F2E76700719A47 /* EnumModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456D23F2E76700719A47 /* EnumModelResponse.swift */; };
+		D1BB457023F2E7BF00719A47 /* EnumGetInServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456F23F2E7BF00719A47 /* EnumGetInServiceErrors.swift */; };
+		D1BB457323F3320300719A47 /* VehicleTestDatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */; };
 		D1C0C69523F1A30E00200D98 /* ListVehiclesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */; };
-		D1C0C69923F1B22000200D98 /* SwinjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */; };
 		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
 		D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */; };
 		D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */; };
@@ -74,6 +77,7 @@
 		B5F6A3A921679B189B4EA0D4 /* Pods-ParqueaderoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.release.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParqueaderoTests.debug.xcconfig"; path = "Target Support Files/Pods-ParqueaderoTests/Pods-ParqueaderoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D11FD49823E8A7C00017883D /* Vehicles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicles.storyboard; sourceTree = "<group>"; };
+		D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImplTest.swift; sourceTree = "<group>"; };
 		D16A7C1323E0AD120059A613 /* Parqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C1623E0AD120059A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16A7C1823E0AD120059A613 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,11 +98,13 @@
 		D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelpers.swift; sourceTree = "<group>"; };
 		D19D1ABC23E8C4A8003FDB0E /* AddVehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddVehicle.storyboard; sourceTree = "<group>"; };
 		D19D1ABE23E8C4CA003FDB0E /* AddVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewController.swift; sourceTree = "<group>"; };
-		D1A164F623E35479008F7D32 /* ParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingPrices.swift; sourceTree = "<group>"; };
+		D1A164F623E35479008F7D32 /* EnumParkingPrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumParkingPrices.swift; sourceTree = "<group>"; };
 		D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImpl.swift; sourceTree = "<group>"; };
 		D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleViewModel.swift; sourceTree = "<group>"; };
+		D1BB456D23F2E76700719A47 /* EnumModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumModelResponse.swift; sourceTree = "<group>"; };
+		D1BB456F23F2E7BF00719A47 /* EnumGetInServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumGetInServiceErrors.swift; sourceTree = "<group>"; };
+		D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTestDatBuilder.swift; sourceTree = "<group>"; };
 		D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVehiclesService.swift; sourceTree = "<group>"; };
-		D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectExtension.swift; sourceTree = "<group>"; };
 		D1D98B8A23EAFF8800574A35 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOProtocol.swift; sourceTree = "<group>"; };
 		D1D98B8F23EB1A1600574A35 /* ParkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingModel.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 		D16A7C2C23E0AD140059A613 /* ParqueaderoTests */ = {
 			isa = PBXGroup;
 			children = (
+				D1BB457123F331EA00719A47 /* DataBuilder */,
 				D16A7C2D23E0AD140059A613 /* ParqueaderoTests.swift */,
 				D16A7C2F23E0AD140059A613 /* Info.plist */,
 			);
@@ -284,9 +291,10 @@
 			isa = PBXGroup;
 			children = (
 				D19D1AB823E8C385003FDB0E /* ExtensionHelpers.swift */,
-				D1A164F623E35479008F7D32 /* ParkingPrices.swift */,
 				D1D98BAD23ECA97500574A35 /* Constants.swift */,
-				D1C0C69823F1B22000200D98 /* SwinjectExtension.swift */,
+				D1BB456D23F2E76700719A47 /* EnumModelResponse.swift */,
+				D1A164F623E35479008F7D32 /* EnumParkingPrices.swift */,
+				D1BB456F23F2E7BF00719A47 /* EnumGetInServiceErrors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -317,6 +325,14 @@
 				D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		D1BB457123F331EA00719A47 /* DataBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */,
+			);
+			path = DataBuilder;
 			sourceTree = "<group>";
 		};
 		D1D98B8E23EB19F900574A35 /* Model */ = {
@@ -351,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				D1B2BF4623E4A66B0044F90D /* ParkingDAOImpl.swift */,
+				D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -651,15 +668,17 @@
 				D1D98B9D23EB806500574A35 /* CalculatePaymentContext.swift in Sources */,
 				D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */,
 				D1D98B9723EB7E3E00574A35 /* CalculatePaymentProtocol.swift in Sources */,
+				D15962AD23F3538000C0814B /* ParkingDAOImplTest.swift in Sources */,
 				D1D98BB023ECD94700574A35 /* CalculateTimeService.swift in Sources */,
 				D1D98B9023EB1A1600574A35 /* ParkingModel.swift in Sources */,
 				D1D98BA223EC614D00574A35 /* MapperVehicleProtocol.swift in Sources */,
+				D1BB456E23F2E76700719A47 /* EnumModelResponse.swift in Sources */,
 				D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */,
 				D1D98B9923EB7EE000574A35 /* CalculatePaymentCar.swift in Sources */,
-				D1C0C69923F1B22000200D98 /* SwinjectExtension.swift in Sources */,
 				D19D1AB923E8C385003FDB0E /* ExtensionHelpers.swift in Sources */,
 				D19D1ABF23E8C4CA003FDB0E /* AddVehicleViewController.swift in Sources */,
-				D1A164F723E35479008F7D32 /* ParkingPrices.swift in Sources */,
+				D1A164F723E35479008F7D32 /* EnumParkingPrices.swift in Sources */,
+				D1BB457023F2E7BF00719A47 /* EnumGetInServiceErrors.swift in Sources */,
 				D1D98B9423EB7D6C00574A35 /* GetOutVehicleService.swift in Sources */,
 				D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */,
 			);
@@ -669,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BB457323F3320300719A47 /* VehicleTestDatBuilder.swift in Sources */,
 				D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +728,129 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D15962B223F362EE00C0814B /* Debug Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug Mock";
+		};
+		D15962B323F362EE00C0814B /* Debug Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752061822CEFE9E8AADF9086 /* Pods-Parqueadero.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Parqueadero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.Parqueadero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug Mock";
+		};
+		D15962B423F362EE00C0814B /* Debug Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F65366A8AB139747F31036 /* Pods-ParqueaderoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ParqueaderoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.ParqueaderoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Parqueadero.app/Parqueadero";
+			};
+			name = "Debug Mock";
+		};
+		D15962B523F362EE00C0814B /* Debug Mock */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81788F45DEB16B8DAB8CF7AB /* Pods-Parqueadero-ParqueaderoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ParqueaderoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.ParqueaderoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Parqueadero;
+			};
+			name = "Debug Mock";
+		};
 		D16A7C3B23E0AD140059A613 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -835,6 +978,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D Parqueadero";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ceiba.Parqueadero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -955,37 +1099,41 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D16A7C3B23E0AD140059A613 /* Debug */,
+				D15962B223F362EE00C0814B /* Debug Mock */,
 				D16A7C3C23E0AD140059A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D16A7C3D23E0AD140059A613 /* Build configuration list for PBXNativeTarget "Parqueadero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D16A7C3E23E0AD140059A613 /* Debug */,
+				D15962B323F362EE00C0814B /* Debug Mock */,
 				D16A7C3F23E0AD140059A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D16A7C4023E0AD140059A613 /* Build configuration list for PBXNativeTarget "ParqueaderoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D16A7C4123E0AD140059A613 /* Debug */,
+				D15962B423F362EE00C0814B /* Debug Mock */,
 				D16A7C4223E0AD140059A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		D16A7C4323E0AD140059A613 /* Build configuration list for PBXNativeTarget "ParqueaderoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D16A7C4423E0AD140059A613 /* Debug */,
+				D15962B523F362EE00C0814B /* Debug Mock */,
 				D16A7C4523E0AD140059A613 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

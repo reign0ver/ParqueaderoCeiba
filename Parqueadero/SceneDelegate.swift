@@ -10,22 +10,39 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
+#if Parqueadero
+let debug = true
+#else
+let debug = false
+#endif
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
     let container: Container = {
         let container = Container()
+        //DAO
+        if debug {
+            container.register(ParkingDAOImpl.self) { _ in
+                ParkingDAOImpl()
+            }
+        } else {
+            container.register(ParkingDAOImplTest.self) { _ in
+                ParkingDAOImplTest()
+            }
+        }
+        //Services
+        container.register(GetInVehicleService.self) { r in
+            GetInVehicleService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+        }
+        container.register(GetOutVehicleService.self) { r in
+            GetOutVehicleService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+        }
+        container.register(ListVehiclesService.self) { r in
+            ListVehiclesService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+        }
         //Model
-        container.register(GetInVehicleService.self) { _ in
-            GetInVehicleService()
-        }
-        container.register(GetOutVehicleService.self) { _ in
-            GetOutVehicleService()
-        }
-        container.register(ListVehiclesService.self) { _ in
-            ListVehiclesService()
-        }
         container.register(ParkingModel.self) { r in
             ParkingModel(getInService: r.resolve(GetInVehicleService.self)!,
                          getOutService: r.resolve(GetOutVehicleService.self)!,

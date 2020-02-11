@@ -13,23 +13,6 @@ import SwinjectStoryboard
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//    let container: Container = {
-//        let container = Container()
-//        //Model
-//        container.register(ParkingModel.self) { r in
-//            ParkingModel(getInService: r.resolve(GetInVehicleService.self)!,
-//                         getOutService: r.resolve(GetOutVehicleService.self)!,
-//                         listVehiclesService: r.resolve(ListVehiclesService.self)!)
-//        }
-//        //ViewModel
-//        container.register(ParkingViewModel.self) { r in
-//            ParkingViewModel(parkingModel: r.resolve(ParkingModel.self)!)
-//        }
-//        //Views
-//        
-//        return container
-//    }()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

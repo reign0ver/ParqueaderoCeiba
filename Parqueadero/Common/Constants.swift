@@ -16,9 +16,10 @@ struct Constants {
     static let motorcycleLimit = 10
     
     static let addedVehicleSuccessfully = "Vehicle added successfully!"
+    static let vehicleTypeNotValid = "Invalid vehicle type."
     
-    static let carVehicle = "CAR"
-    static let motoVehicle = "MOTORCYCLE"
+    static let car = "CAR"
+    static let moto = "MOTORCYCLE"
     
     static let monday = "MONDAY"
     static let sunday = "SUNDAY"

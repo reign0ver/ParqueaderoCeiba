@@ -14,7 +14,6 @@ class ParkingViewModel {
     // MARK: View Messages
     let cellId = "vehicleCell"
     let navigationTitle = "Vehicles"
-    let newVehicleNavTitle = "New Vehicle"
     let emptyListMessage = "Parking is empty"
     
     private let model: ParkingModel

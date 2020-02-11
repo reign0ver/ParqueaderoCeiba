@@ -16,11 +16,9 @@ class ParqueaderoTests: XCTestCase {
     var dateComponentsEntrance: DateComponents!
     var someDate: Date!
     var dateComponentsOut: DateComponents!
-    var vehicle: Vehicle!
+    var vehicleDataBuilder: VehicleTestDataBuilder!
     
     override func setUp() {
-        getInService = GetInVehicleService()
-        getOutService = GetOutVehicleService()
         dateComponentsEntrance = DateComponents()
         dateComponentsOut = DateComponents()
         setupDateComponentsOut()
@@ -35,7 +33,8 @@ class ParqueaderoTests: XCTestCase {
     func setupVehicle () {
         let userCalendar = Calendar.current
         let someDate = userCalendar.date(from: dateComponentsEntrance)
-        vehicle = Vehicle(licencePlate: "AAA", type: "MOTORCYCLE", cc: 0, date: someDate!)
+        vehicleDataBuilder = VehicleTestDataBuilder()
+        vehicleDataBuilder.withDate(someDate!)
     }
     
     func setupDateComponentsOut () {
@@ -48,41 +47,39 @@ class ParqueaderoTests: XCTestCase {
         dateComponentsEntrance.year = 2020
         dateComponentsEntrance.day = dateComponentsOut.day! - 2
         dateComponentsEntrance.hour = dateComponentsOut.hour! - 14
-        dateComponentsEntrance.minute = 30
         dateComponentsEntrance.timeZone = .current
+    }
+    
+    func setupFridayDay () -> Date { //seteo un viernes siempre para generar el error de la placa
+        var dateComponents = DateComponents()
+        dateComponents.year = 2020
+        dateComponents.day = 14
+        dateComponents.month = 2
+        return Calendar.current.date(from: dateComponents)!
     }
     
     func testCalculateTimeInTheParking () {
         //Arrange
-        let seconds = vehicle.date.distance(to: Date())
-        var days: Int = Int(seconds / Constants.dayInSeconds)
-        var hours: Double = seconds / Constants.hourInSeconds
-        var approxHours: Int
-        
-        hours -= Double(days) * Constants.dayInHours
-        if hours > Constants.maxHoursPerDay {
-            days += 1
-            hours -= Constants.maxHoursPerDay
-        }
-        approxHours = Int(hours) + 1
+        let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act
         let (daysResult, hoursResult) = CalculateTimeService.calculateTime(vehicle: vehicle)
         //Assert
-        XCTAssertEqual(daysResult, days)
-        XCTAssertEqual(hoursResult, approxHours)
+        XCTAssertEqual(3, daysResult)
+        XCTAssertEqual(6, hoursResult)
     }
     
     func testCanGetInWhenLicencePlateStartsWithA () {
         //Arrange
-        let expectedMessage = "You cannot get in :(.  Your licence plate is only allowed to entry on Sunday and Monday"
-        //Act
-        
-        //Assert
+        vehicleDataBuilder.withLicencePlate("ABC123")
+        vehicleDataBuilder.withDate(setupFridayDay())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        //Act - Assert
+        XCTAssertThrowsError(try getInService.canVehicleGetInToday(vehicle.licencePlate))
     }
     
     func testAlreadyExistsTheVehicleInThePark () {
         //Arrange
-        
+        let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act
         
         //Assert

@@ -14,7 +14,7 @@ class ParkingDAOImpl: ParkingDAOProtocol {
     var realm: Realm!
     
     init() {
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         do {
             realm = try Realm()
         } catch let error {
@@ -57,7 +57,7 @@ class ParkingDAOImpl: ParkingDAOProtocol {
         return MapperVehicleImpl.mapRealmListToArray(realm.objects(VehicleEntity.self))
     }
     
-    func getCountByVehicleType (type: String) -> Int {
+    func getCountByVehicleType (_ type: String) -> Int {
         let vehicleType = realm.objects(VehicleEntity.self).filter("type = '\(type)'")
         return vehicleType.count
     }
