@@ -17,6 +17,7 @@ struct Constants {
     
     static let addedVehicleSuccessfully = "Vehicle added successfully!"
     static let vehicleTypeNotValid = "Invalid vehicle type."
+    static let allFieldsMustBeFilled = "All fields must be filled!"
     
     static let car = "CAR"
     static let moto = "MOTORCYCLE"

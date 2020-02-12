@@ -27,14 +27,16 @@ class AddVehicleViewController: UIViewController {
     }
     
     @objc private func save () {
-        if let licenceName = licenceName.text, let type = type.text {
+        if licenceName.text != "" && type.text != "" {
+            let licencePlate = licenceName.text!
+            let vehicleType = type.text!
             if cc.text == "" {
                 cc.text = "0"
             }
-            if type.uppercased() == Constants.moto || type.uppercased() == Constants.car {
+            if vehicleType.uppercased() == Constants.moto || vehicleType.uppercased() == Constants.car {
                 let newVehicle = Vehicle(
-                    licencePlate: licenceName.uppercased(),
-                    type: type.uppercased(),
+                    licencePlate: licencePlate.uppercased(),
+                    type: vehicleType.uppercased(),
                     cc: Int16(cc.text!)!,
                     date: Date())
                 
@@ -52,7 +54,10 @@ class AddVehicleViewController: UIViewController {
                 self.present(alerta, animated: true, completion: nil)
             }
         } else {
-            //print all fields must be filled
+            let alerta = UIAlertController(title: "Alert!", message: Constants.allFieldsMustBeFilled, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alerta.addAction(ok)
+            self.present(alerta, animated: true, completion: nil)
         }
     }
     

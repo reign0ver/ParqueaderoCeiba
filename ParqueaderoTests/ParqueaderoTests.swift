@@ -14,10 +14,8 @@ class ParqueaderoTests: XCTestCase {
     
     var getInService: GetInVehicleService!
     var getOutService: GetOutVehicleService!
-    var dateComponentsEntrance: DateComponents!
-    var someDate: Date!
-    var dateComponentsOut: DateComponents!
     var vehicleDataBuilder: VehicleTestDataBuilder!
+    var dateDataBuilder: DateDataBuilder!
     
     let container: Container = {
         let container = Container()
@@ -31,59 +29,66 @@ class ParqueaderoTests: XCTestCase {
     }()
     
     override func setUp() {
-        dateComponentsEntrance = DateComponents()
-        dateComponentsOut = DateComponents()
-        setupDateComponentsOut()
-        setupDateComponentsIn()
-        setupVehicle()
+        dateDataBuilder = DateDataBuilder()
+        vehicleDataBuilder = VehicleTestDataBuilder()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func setupVehicle () {
-        let userCalendar = Calendar.current
-        let someDate = userCalendar.date(from: dateComponentsEntrance)
-        vehicleDataBuilder = VehicleTestDataBuilder()
-        vehicleDataBuilder.withDate(someDate!)
-    }
-    
-    func setupDateComponentsOut () {
-        dateComponentsOut = Calendar.current.dateComponents([.day, .hour, .month], from: Date())
-    }
-    
-    func setupDateComponentsIn () {
-        dateComponentsEntrance = Calendar.current.dateComponents([.day, .hour, .month], from: Date())
-        
-        dateComponentsEntrance.year = 2020
-        dateComponentsEntrance.day = dateComponentsOut.day! - 2
-        dateComponentsEntrance.hour = dateComponentsOut.hour! - 14
-        dateComponentsEntrance.timeZone = .current
-    }
-    
-    func setupFridayDay () -> Date { //seteo un viernes siempre para generar el error de la placa
-        var dateComponents = DateComponents()
-        dateComponents.year = 2020
-        dateComponents.day = 14
-        dateComponents.month = 2
-        return Calendar.current.date(from: dateComponents)!
-    }
-    
-    func testCalculateTimeInTheParking () {
+    func testCalculateTimeInTheParkingWithHours () {
         //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(5)
+        dateDataBuilder.withMinutes(30)
+        
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        
         let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act
         let (daysResult, hoursResult) = CalculateTimeService.calculateTime(vehicle: vehicle)
         //Assert
-        XCTAssertEqual(3, daysResult)
+        XCTAssertEqual(2, daysResult)
+        XCTAssertEqual(6, hoursResult)
+    }
+    
+    func testCalculateTimeInTheParkingFullDays () {
+        //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(7)
+        dateDataBuilder.withMinutes(-1)
+        
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        //Act
+        let (daysResult, hoursResult) = CalculateTimeService.calculateTime(vehicle: vehicle)
+        //Assert
+        XCTAssertEqual(2, daysResult)
+        XCTAssertEqual(7, hoursResult)
+    }
+    
+    func testCalculateTimeInTheParkingSmallerThan9Hrs () {
+        //Arrange
+        dateDataBuilder.withHours(5)
+        dateDataBuilder.withMinutes(30)
+        
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        //Act
+        let (daysResult, hoursResult) = CalculateTimeService.calculateTime(vehicle: vehicle)
+        //Assert
+        XCTAssertEqual(0, daysResult)
         XCTAssertEqual(6, hoursResult)
     }
     
     func testCanGetInWhenLicencePlateStartsWithA () {
         //Arrange
         vehicleDataBuilder.withLicencePlate("ABC123")
-        vehicleDataBuilder.withDate(setupFridayDay())
+        dateDataBuilder.withFriday()
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
         let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act - Assert
         XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.canVehicleGetInToday(vehicle.licencePlate))
@@ -99,18 +104,102 @@ class ParqueaderoTests: XCTestCase {
     
     func testCanGetInWhenCarLimitIsReached () {
         //Arrange
-        var vehicle: Vehicle = vehicleDataBuilder.build()
-        vehicle.type = Constants.car
+        vehicleDataBuilder.withType(Constants.car)
+        let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act - Assert
         XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.isParkingFullByVehicleType(vehicle.type))
     }
     
     func testCanGetInWhenMotoLimitIsReached () {
         //Arrange
-        var vehicle: Vehicle = vehicleDataBuilder.build()
-        vehicle.type = Constants.moto
+        vehicleDataBuilder.withType(Constants.moto)
+        let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act - Assert
         XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.isParkingFullByVehicleType(vehicle.type))
     }
     
+    func testCalculatePaymentCarFullDay () {
+        //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(15)
+        dateDataBuilder.withMinutes(30)
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateCar = CalculatePaymentCar()
+        //Act
+        let totalToPay = calculateCar.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 24000)
+    }
+    
+    func testCalculatePaymentCarWithHours () {
+        //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(4)
+        dateDataBuilder.withMinutes(15)
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateCar = CalculatePaymentCar()
+        //Act
+        let totalToPay = calculateCar.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 21000)
+    }
+    
+    func testCalculatePaymentMotorcycleFullDay () {
+        //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(15)
+        dateDataBuilder.withMinutes(30)
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateMotorcycle = CalculatePaymentMotorcycle()
+        //Act
+        let totalToPay = calculateMotorcycle.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 12000)
+    }
+    
+    func testCalculatePaymentMotorcycleAfter1Hour () {
+        //Arrange
+        dateDataBuilder.withDays(3)
+        dateDataBuilder.withHours(1)
+        dateDataBuilder.withMinutes(1) //date entry is before the getoutdate
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateMotorcycle = CalculatePaymentMotorcycle()
+        //Act
+        let totalToPay = calculateMotorcycle.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 13000)
+    }
+    
+    func testCalculatePaymentMotorcycleBefore1Hour () {
+        //Arrange
+        dateDataBuilder.withDays(3)
+        dateDataBuilder.withHours(1)
+        dateDataBuilder.withMinutes(-1)
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateMotorcycle = CalculatePaymentMotorcycle()
+        //Act
+        let totalToPay = calculateMotorcycle.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 12500)
+    }
+    
+    func testCalculatePaymentMotorcycleWhenIsGreaterThan500 () {
+        //Arrange
+        dateDataBuilder.withDays(2)
+        dateDataBuilder.withHours(15)
+        dateDataBuilder.withMinutes(30)
+        vehicleDataBuilder.withDate(dateDataBuilder.build())
+        vehicleDataBuilder.withCC(650)
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        let calculateMotorcycle = CalculatePaymentMotorcycle()
+        //Act
+        let totalToPay = calculateMotorcycle.calculatePayment(vehicle)
+        //Assert
+        XCTAssertEqual(totalToPay, 14000)
+    }
 }

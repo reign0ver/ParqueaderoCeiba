@@ -15,13 +15,15 @@ class CalculateTimeService {
         var days: Int = Int(seconds / Constants.dayInSeconds)
         var hours: Double = seconds / Constants.hourInSeconds
         var approxHours: Int
+        var hoursToPay: Int
         
         hours -= Double(days) * Constants.dayInHours
         if hours > Constants.maxHoursPerDay {
             days += 1
-            hours -= Constants.maxHoursPerDay
+            hours = 0
         }
-        approxHours = Int(hours) + 1
+        hoursToPay = hours.truncatingRemainder(dividingBy: 1.0) > 0 ? Int(hours) + 1 : Int(hours)
+        approxHours = hours == 0 ? 0 : hoursToPay
         return (days, approxHours)
     }
     

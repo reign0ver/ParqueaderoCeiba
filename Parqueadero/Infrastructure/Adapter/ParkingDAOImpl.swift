@@ -14,7 +14,7 @@ class ParkingDAOImpl: ParkingDAOProtocol {
     var realm: Realm!
     
     init() {
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         do {
             realm = try Realm()
         } catch let error {

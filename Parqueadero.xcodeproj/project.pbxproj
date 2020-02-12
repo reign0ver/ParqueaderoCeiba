@@ -11,6 +11,7 @@
 		D11FD49923E8A7C00017883D /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11FD49823E8A7C00017883D /* Vehicles.storyboard */; };
 		D15962AD23F3538000C0814B /* ParkingDAOImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */; };
 		D15962B623F3826C00C0814B /* VehicleTestDatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */; };
+		D15962B823F44D9200C0814B /* DateDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15962B723F44D9200C0814B /* DateDataBuilder.swift */; };
 		D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1623E0AD120059A613 /* AppDelegate.swift */; };
 		D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1823E0AD120059A613 /* SceneDelegate.swift */; };
 		D16A7C2023E0AD130059A613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C1F23E0AD130059A613 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		C4839167E2CB771D54901180 /* Pods-Parqueadero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parqueadero.release.xcconfig"; path = "Target Support Files/Pods-Parqueadero/Pods-Parqueadero.release.xcconfig"; sourceTree = "<group>"; };
 		D11FD49823E8A7C00017883D /* Vehicles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicles.storyboard; sourceTree = "<group>"; };
 		D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDAOImplTest.swift; sourceTree = "<group>"; };
+		D15962B723F44D9200C0814B /* DateDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDataBuilder.swift; sourceTree = "<group>"; };
 		D16A7C1323E0AD120059A613 /* Parqueadero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parqueadero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16A7C1623E0AD120059A613 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16A7C1823E0AD120059A613 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */,
+				D15962B723F44D9200C0814B /* DateDataBuilder.swift */,
 			);
 			path = DataBuilder;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 			files = (
 				D15962B623F3826C00C0814B /* VehicleTestDatBuilder.swift in Sources */,
 				D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */,
+				D15962B823F44D9200C0814B /* DateDataBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
