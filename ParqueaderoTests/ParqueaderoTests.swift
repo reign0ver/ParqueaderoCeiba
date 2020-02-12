@@ -79,7 +79,7 @@ class ParqueaderoTests: XCTestCase {
     
     func testAlreadyExistsTheVehicleInThePark () {
         //Arrange
-        let vehicle: Vehicle = vehicleDataBuilder.build()
+//        let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act
         
         //Assert
@@ -87,18 +87,22 @@ class ParqueaderoTests: XCTestCase {
     
     func testCanGetInWhenCarLimitIsReached () {
         //Arrange
-        
+        var vehicle: Vehicle = vehicleDataBuilder.build()
+        vehicle.type = Constants.car
         //Act
         
         //Assert
+        XCTAssertThrowsError(try getInService.isParkingFullByVehicleType(vehicle.type))
     }
     
     func testCanGetInWhenMotoLimitIsReached () {
         //Arrange
-        
+        var vehicle: Vehicle = vehicleDataBuilder.build()
+        vehicle.type = Constants.moto
         //Act
         
         //Assert
+        XCTAssertThrowsError(try getInService.isParkingFullByVehicleType(vehicle.type))
     }
     
 }

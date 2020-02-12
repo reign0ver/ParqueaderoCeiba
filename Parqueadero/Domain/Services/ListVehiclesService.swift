@@ -10,9 +10,9 @@ import Foundation
 
 class ListVehiclesService {
     
-    var parkingDAO: ParkingDAOImpl
+    var parkingDAO: ParkingDAOProtocol
     
-    init(parkingDAO: ParkingDAOImpl) {
+    init(parkingDAO: ParkingDAOProtocol) {
         self.parkingDAO = parkingDAO
     }
     

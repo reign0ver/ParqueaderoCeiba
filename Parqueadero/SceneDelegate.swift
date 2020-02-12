@@ -23,24 +23,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let container: Container = {
         let container = Container()
         //DAO
-        if debug {
-            container.register(ParkingDAOImpl.self) { _ in
-                ParkingDAOImpl()
-            }
-        } else {
-            container.register(ParkingDAOImplTest.self) { _ in
-                ParkingDAOImplTest()
+//        container.register(ParkingDAOImpl.self) { _ in
+//            ParkingDAOImpl()
+//        }
+        container.register(ParkingDAOProtocol.self) { _ in
+            if debug {
+                return ParkingDAOImpl()
+            } else {
+                return ParkingDAOImplTest()
             }
         }
         //Services
         container.register(GetInVehicleService.self) { r in
-            GetInVehicleService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+            GetInVehicleService(parkingDAO: r.resolve(ParkingDAOProtocol.self)!)
         }
         container.register(GetOutVehicleService.self) { r in
-            GetOutVehicleService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+            GetOutVehicleService(parkingDAO: r.resolve(ParkingDAOProtocol.self)!)
         }
         container.register(ListVehiclesService.self) { r in
-            ListVehiclesService(parkingDAO: r.resolve(ParkingDAOImpl.self)!)
+            ListVehiclesService(parkingDAO: r.resolve(ParkingDAOProtocol.self)!)
         }
         //Model
         container.register(ParkingModel.self) { r in

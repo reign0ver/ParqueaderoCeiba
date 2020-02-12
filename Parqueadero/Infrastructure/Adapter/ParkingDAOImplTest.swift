@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ParkingDAOImplTest {
+class ParkingDAOImplTest: ParkingDAOProtocol {
     
     var vehicles: [Vehicle] = []
     
@@ -26,5 +26,14 @@ class ParkingDAOImplTest {
     
     func getCountByVehicleType (_ type: String) -> Int {
         return type == Constants.car ? Constants.carLimit : Constants.motorcycleLimit
+    }
+    
+    func getAllParkedVehicles() -> [Vehicle] {
+        //Doesnt apply
+        return vehicles
+    }
+    
+    func removeFromParking(_ vehicle: Vehicle) {
+        //Doesnt apply
     }
 }
