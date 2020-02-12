@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Swinject
 @testable import Parqueadero
 
 class ParqueaderoTests: XCTestCase {
@@ -17,6 +18,17 @@ class ParqueaderoTests: XCTestCase {
     var someDate: Date!
     var dateComponentsOut: DateComponents!
     var vehicleDataBuilder: VehicleTestDataBuilder!
+    
+    let container: Container = {
+        let container = Container()
+        container.register(ParkingDAOProtocol.self) { _ in
+            ParkingDAOImplTest()
+        }
+        container.register(GetInVehicleService.self) { r in
+            GetInVehicleService(parkingDAO: r.resolve(ParkingDAOProtocol.self)!)
+        }
+        return container
+    }()
     
     override func setUp() {
         dateComponentsEntrance = DateComponents()
@@ -74,35 +86,31 @@ class ParqueaderoTests: XCTestCase {
         vehicleDataBuilder.withDate(setupFridayDay())
         let vehicle: Vehicle = vehicleDataBuilder.build()
         //Act - Assert
-        XCTAssertThrowsError(try getInService.canVehicleGetInToday(vehicle.licencePlate))
+        XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.canVehicleGetInToday(vehicle.licencePlate))
     }
     
     func testAlreadyExistsTheVehicleInThePark () {
         //Arrange
-//        let vehicle: Vehicle = vehicleDataBuilder.build()
-        //Act
-        
-        //Assert
+        vehicleDataBuilder.withLicencePlate("ANC717")
+        let vehicle: Vehicle = vehicleDataBuilder.build()
+        //Act - Assert
+        XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.alreadyExistInThePark(vehicle.licencePlate))
     }
     
     func testCanGetInWhenCarLimitIsReached () {
         //Arrange
         var vehicle: Vehicle = vehicleDataBuilder.build()
         vehicle.type = Constants.car
-        //Act
-        
-        //Assert
-        XCTAssertThrowsError(try getInService.isParkingFullByVehicleType(vehicle.type))
+        //Act - Assert
+        XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.isParkingFullByVehicleType(vehicle.type))
     }
     
     func testCanGetInWhenMotoLimitIsReached () {
         //Arrange
         var vehicle: Vehicle = vehicleDataBuilder.build()
         vehicle.type = Constants.moto
-        //Act
-        
-        //Assert
-        XCTAssertThrowsError(try getInService.isParkingFullByVehicleType(vehicle.type))
+        //Act - Assert
+        XCTAssertThrowsError(try container.resolve(GetInVehicleService.self)?.isParkingFullByVehicleType(vehicle.type))
     }
     
 }

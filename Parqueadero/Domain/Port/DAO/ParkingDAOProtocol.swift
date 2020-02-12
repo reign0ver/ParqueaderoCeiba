@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 protocol ParkingDAOProtocol {
     func insert (_ vehicle: Vehicle)

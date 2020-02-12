@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             } else {
                 return ParkingDAOImplTest()
             }
-        }
+        }.inObjectScope(.container)
         //Services
         container.register(GetInVehicleService.self) { r in
             GetInVehicleService(parkingDAO: r.resolve(ParkingDAOProtocol.self)!)

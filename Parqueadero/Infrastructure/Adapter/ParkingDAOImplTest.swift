@@ -10,7 +10,9 @@ import Foundation
 
 class ParkingDAOImplTest: ParkingDAOProtocol {
     
-    var vehicles: [Vehicle] = []
+    var vehicles: [Vehicle] = [
+        Vehicle(licencePlate: "ANC717", type: "", cc: 0, date: Date())
+    ]
     
     func insert (_ vehicle: Vehicle) {
         vehicles.append(vehicle)

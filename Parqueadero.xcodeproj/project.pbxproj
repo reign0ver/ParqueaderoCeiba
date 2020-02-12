@@ -10,6 +10,7 @@
 		6A6F037286663B3788E95EAB /* Pods_Parqueadero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20857A92F240A42CD4F3CB31 /* Pods_Parqueadero.framework */; };
 		D11FD49923E8A7C00017883D /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11FD49823E8A7C00017883D /* Vehicles.storyboard */; };
 		D15962AD23F3538000C0814B /* ParkingDAOImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15962AC23F3538000C0814B /* ParkingDAOImplTest.swift */; };
+		D15962B623F3826C00C0814B /* VehicleTestDatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */; };
 		D16A7C1723E0AD120059A613 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1623E0AD120059A613 /* AppDelegate.swift */; };
 		D16A7C1923E0AD120059A613 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A7C1823E0AD120059A613 /* SceneDelegate.swift */; };
 		D16A7C2023E0AD130059A613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A7C1F23E0AD130059A613 /* Assets.xcassets */; };
@@ -29,7 +30,6 @@
 		D1BB456C23F1E2DE00719A47 /* AddVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456B23F1E2DE00719A47 /* AddVehicleViewModel.swift */; };
 		D1BB456E23F2E76700719A47 /* EnumModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456D23F2E76700719A47 /* EnumModelResponse.swift */; };
 		D1BB457023F2E7BF00719A47 /* EnumGetInServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB456F23F2E7BF00719A47 /* EnumGetInServiceErrors.swift */; };
-		D1BB457323F3320300719A47 /* VehicleTestDatBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB457223F3320300719A47 /* VehicleTestDatBuilder.swift */; };
 		D1C0C69523F1A30E00200D98 /* ListVehiclesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0C69423F1A30E00200D98 /* ListVehiclesService.swift */; };
 		D1D98B8B23EAFF8800574A35 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8A23EAFF8800574A35 /* Response.swift */; };
 		D1D98B8D23EB16B900574A35 /* ParkingDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D98B8C23EB16B900574A35 /* ParkingDAOProtocol.swift */; };
@@ -694,7 +694,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1BB457323F3320300719A47 /* VehicleTestDatBuilder.swift in Sources */,
+				D15962B623F3826C00C0814B /* VehicleTestDatBuilder.swift in Sources */,
 				D16A7C2E23E0AD140059A613 /* ParqueaderoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +821,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ParqueaderoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1020,6 +1021,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ParqueaderoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -1042,6 +1044,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ParqueaderoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

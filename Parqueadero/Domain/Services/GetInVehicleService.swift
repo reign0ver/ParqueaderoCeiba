@@ -17,14 +17,17 @@ class GetInVehicleService {
     }
     
     func getInVehicle (_ vehicle: Vehicle) -> Response<Any> {
-        if parkingDAO.findVehicle(vehicle.licencePlate) {
-            return Response(success: false, data: nil, error: GetInServiceErrors.alreadyExists.rawValue)
+        do {
+            try alreadyExistInThePark(vehicle.licencePlate)
+        } catch let error as GetInServiceErrors {
+            return Response(success: false, data: nil, error: error.rawValue)
+        } catch {
+            print("Any other error ecurred", error.localizedDescription)
         }
         
         do {
             try isParkingFullByVehicleType(vehicle.type)
         } catch let error as GetInServiceErrors {
-            print(error)
             return Response(success: false, data: nil, error: error.rawValue)
         } catch {
             print("Any other error ecurred", error.localizedDescription)
@@ -33,13 +36,19 @@ class GetInVehicleService {
         do {
             try canVehicleGetInToday(vehicle.licencePlate)
         } catch let error as GetInServiceErrors {
-            print(error)
             return Response(success: false, data: nil, error: error.rawValue)
         } catch {
             print("Any other error ecurred", error.localizedDescription)
         }
         parkingDAO.insert(vehicle)
         return Response(success: true, data: Constants.addedVehicleSuccessfully, error: nil)
+    }
+    
+    func alreadyExistInThePark (_ licencePlate: String) throws {
+        let exist = parkingDAO.findVehicle(licencePlate)
+        if exist {
+            throw GetInServiceErrors.alreadyExists
+        }
     }
     
     func isParkingFullByVehicleType (_ type: String) throws {
